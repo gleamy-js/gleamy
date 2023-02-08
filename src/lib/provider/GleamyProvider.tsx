@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { ReactNode, useEffect } from 'react';
 import { GleamyContext } from '.';
 import { TProvider } from '../types/provider';
 import { TProviderValues } from '../types/provider/TProvider';
@@ -52,7 +52,7 @@ const scrollHandler = (): void => {
 export const GleamyProvider = ({
   children,
   options = {},
-}: TProvider): JSX.Element => {
+}: TProvider): ReactNode => {
   const gleamySettings = {
     fps: 60,
     devicePixelRatio: dpr,

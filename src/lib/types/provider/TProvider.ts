@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import { JsxElement } from 'typescript';
 
 export type Animators = {
@@ -33,6 +34,6 @@ export type TOptionalProviderValues = TProviderValues & {
 };
 
 export type TProvider = {
-  children: JsxElement;
+  children: ReactNode;
   options?: Partial<TOptionalProviderValues>;
 };
