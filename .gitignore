@@ -12,6 +12,9 @@
 # production
 /.husky
 /build
+/dist
+_bundles
+yarn-error.log
 
 # misc
 .DS_Store

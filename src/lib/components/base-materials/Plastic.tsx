@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import { GradientMaterial } from '.';
 import styled from 'styled-components';
-import { TDynamicGradient } from 'src/lib/types';
+import { TDynamicGradient } from '../../../types';
 
 const Material = styled(GradientMaterial)`
   mix-blend-mode: overlay;

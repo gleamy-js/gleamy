@@ -1,5 +1,5 @@
-import { TBase } from 'src/lib/types/base-materials/TBase';
-import { clipPathRef, clipPathScale, Spread } from 'src/lib/types/generics';
+import { TBase } from 'src/types/base-materials/TBase';
+import { clipPathRef, clipPathScale, Spread } from 'src/types/generics';
 
 export type THolographic = TBase & {
   edgeThickness: number;

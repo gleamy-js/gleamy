@@ -1,6 +1,6 @@
 import { Metal } from '../../base-materials';
 import { copper } from '../../../definitions';
-import { TCopper } from 'src/lib/types';
+import { TCopper } from '../../../../types';
 
 export const Copper = ({
   width = '100%',

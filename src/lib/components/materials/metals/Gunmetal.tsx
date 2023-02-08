@@ -1,6 +1,6 @@
 import { Metal } from '../../base-materials';
 import { gunmetal } from '../../../definitions';
-import { TGunmetal } from 'src/lib/types';
+import { TGunmetal } from '../../../../types';
 
 export const Gunmetal = ({
   width = '100%',

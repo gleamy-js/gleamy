@@ -1,6 +1,7 @@
 export * from './metals';
 export * from './particles';
 export * from './plastics';
+export * from './compound';
 
 export type TMaterialNames =
   // Metal

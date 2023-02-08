@@ -1,6 +1,6 @@
 import { Metal } from '../../base-materials';
 import { blueSteel } from '../../../definitions';
-import { TBlueSteel } from 'src/lib/types';
+import { TBlueSteel } from '../../../../types';
 
 export const BlueSteel = ({
   width = '100%',

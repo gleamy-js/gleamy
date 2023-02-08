@@ -1,4 +1,4 @@
-import { DynamicGradientDefinition } from '../../types';
+import { DynamicGradientDefinition } from '../../../types';
 import { spreadColorProps } from '../../utils/spreadColorProps';
 
 export const iridescent = ({

@@ -1,6 +1,6 @@
 import { FC, useEffect, useCallback, useContext, useRef } from 'react';
 import { setDPI } from '../../utils/setDPI';
-import { TParticle } from 'src/lib/types';
+import { TParticle } from '../../../types';
 import { GleamyContext } from '../../provider';
 
 type CreateParticles = {

@@ -1,6 +1,6 @@
 import { Metal } from '../../base-materials';
 import { silver } from '../../../definitions';
-import { TSilver } from 'src/lib/types';
+import { TSilver } from '../../../../types';
 
 export const Silver = ({
   width = '100%',

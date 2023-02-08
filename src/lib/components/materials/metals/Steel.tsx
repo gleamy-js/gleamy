@@ -1,6 +1,6 @@
 import { Metal } from '../../base-materials';
 import { steel } from '../../../definitions';
-import { TSteel } from 'src/lib/types';
+import { TSteel } from '../../../../types';
 
 export const Steel = ({
   width = '100%',

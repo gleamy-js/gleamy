@@ -1,7 +1,7 @@
 import {
   AnimatorKey,
   TOptionalProviderValues,
-} from '../types/provider/TProvider';
+} from '../../types/provider/TProvider';
 
 const DEFAULT_DEVICE_PIXEL_RATIO = 96;
 const DEFAULT_ANIMATOR: AnimatorKey = 'mouseMove';

@@ -1,6 +1,6 @@
 import { Metal } from '../../base-materials';
 import { gold } from '../../../definitions';
-import { TGold } from 'src/lib/types';
+import { TGold } from '../../../../types';
 
 export const Gold = ({
   width = '100%',

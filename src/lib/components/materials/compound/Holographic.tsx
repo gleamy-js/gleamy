@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Metal, Plastic, CompoundContainer } from '../../base-materials';
 import { gunmetal, laser } from '../../../definitions';
-import { THolographic } from 'src/lib/types/materials/compound';
+import { THolographic } from '../../../../types';
 
 const StyledFoil = styled(Plastic)`
   mix-blend-mode: color-dodge;

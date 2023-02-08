@@ -1,6 +1,6 @@
 import { Plastic } from '../../base-materials';
 import { lacquer } from '../../../definitions';
-import { TLacquer } from 'src/lib/types';
+import { TLacquer } from '../../../../types';
 
 export const Lacquer = ({
   width = '100%',

@@ -19,7 +19,7 @@ module.exports = {
   parserOptions: {
     project: 'tsconfig.json',
     sourceType: 'module',
-    ecmaVersion: '2022',
+    ecmaVersion: 'es2015',
   },
   plugins: [
     'eslint-plugin-jsdoc',
@@ -29,7 +29,10 @@ module.exports = {
     'jest',
   ],
   globals: {
-    "JSX": "readonly"
- },
-  root: true
+    JSX: 'readonly',
+  },
+  root: true,
+  exclude: [
+    "./dis/*.*"
+  ]
 };

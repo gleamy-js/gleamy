@@ -1,0 +1,14 @@
+.*
+**/tsconfig.json
+**/webpack.config.js
+
+public
+build
+coverage-ts
+to-be-worked-on
+node_modules
+src
+eslintrc.cjs
+.prettierrc.json
+rollup.config.js
+tsconfig.json

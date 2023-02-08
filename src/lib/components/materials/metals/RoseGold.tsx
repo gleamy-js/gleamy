@@ -1,6 +1,6 @@
 import { Metal } from '../../base-materials';
 import { rosegold } from '../../../definitions';
-import { TRoseGold } from 'src/lib/types';
+import { TRoseGold } from '../../../../types';
 
 export const RoseGold = ({
   width = '100%',

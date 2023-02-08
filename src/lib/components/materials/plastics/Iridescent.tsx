@@ -1,7 +1,7 @@
 import { Plastic } from '../../base-materials';
 import { iridescent } from '../../../definitions';
 import styled from 'styled-components';
-import { TIridescent } from 'src/lib/types';
+import { TIridescent } from '../../../../types';
 
 const Component = styled(Plastic)`
   mix-blend-mode: color;

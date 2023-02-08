@@ -1,7 +1,7 @@
-import { ReactNode, useEffect } from 'react';
+import { useEffect } from 'react';
 import { GleamyContext } from '.';
-import { TProvider } from '../types/provider';
-import { TProviderValues } from '../types/provider/TProvider';
+import { TProvider } from '../../types/provider';
+import { TProviderValues } from '../../types/provider/TProvider';
 
 const animatorsValues = {
   mouseMove: { x: 0, y: 0 },
@@ -52,7 +52,7 @@ const scrollHandler = (): void => {
 export const GleamyProvider = ({
   children,
   options = {},
-}: TProvider): ReactNode => {
+}: TProvider): JSX.Element => {
   const gleamySettings = {
     fps: 60,
     devicePixelRatio: dpr,
@@ -70,13 +70,15 @@ export const GleamyProvider = ({
   } as TProviderValues;
 
   useEffect(() => {
-    window.addEventListener('mousemove', mouseMoveHandler);
-    window.addEventListener('scroll', scrollHandler);
-    window.addEventListener('resize', resizeHandler);
+    if (window) {
+      window.addEventListener('mousemove', mouseMoveHandler);
+      window.addEventListener('scroll', scrollHandler);
+      window.addEventListener('resize', resizeHandler);
 
-    // Set initial defaults:
-    animatorsValues.scroll.x = window.scrollX;
-    animatorsValues.scroll.y = window.scrollY;
+      // Set initial defaults:
+      animatorsValues.scroll.x = window.scrollX;
+      animatorsValues.scroll.y = window.scrollY;
+    }
 
     return (): void => {
       window.removeEventListener('mousemove', mouseMoveHandler);

@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import { ParticleMaterial } from '.';
 import styled from 'styled-components';
-import { TParticle } from 'src/lib/types';
+import { TParticle } from '../../../types';
 
 const Material = styled(ParticleMaterial)`
   mix-blend-mode: normal;

@@ -1,5 +1,4 @@
 import { ReactNode } from 'react';
-import { JsxElement } from 'typescript';
 
 export type Animators = {
   mouseMove: {

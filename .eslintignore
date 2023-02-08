@@ -1,7 +1,7 @@
-# Ignore artifacts:
+.
 build
-coverage
 coverage-ts
+coverage
 node_modules
 dist
-.husky
+to-be-worked-on

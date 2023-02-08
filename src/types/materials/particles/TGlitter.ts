@@ -1,10 +1,5 @@
-import { TBase } from 'src/lib/types/base-materials/TBase';
-import {
-  Color,
-  One,
-  ParticleColor,
-  PercentageRange,
-} from 'src/lib/types/generics';
+import { TBase } from 'src/types/base-materials/TBase';
+import { Color, One, ParticleColor, PercentageRange } from 'src/types/generics';
 
 export type TGlitter = TBase & {
   glitterColor: ParticleColor | ParticleColor[];

@@ -1,6 +1,6 @@
 import { Particle } from '../../base-materials';
 import { glitter } from '../../../definitions';
-import { TGlitter } from 'src/lib/types';
+import { TGlitter } from '../../../../types';
 
 export const Glitter = ({
   width,

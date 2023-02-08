@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import { GradientMaterial } from '.';
 import styled from 'styled-components';
-import { TStaticGradient } from 'src/lib/types';
+import { TStaticGradient } from '../../../types';
 
 const Material = styled(GradientMaterial)`
   display: block;

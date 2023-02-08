@@ -1,5 +1,5 @@
-import { ColorStops } from '../../types';
-import { DynamicGradientDefinition } from '../../types/materialdefinitions/DynamicGradientDefinition';
+import { ColorStops } from '../../../types';
+import { DynamicGradientDefinition } from '../../../types/materialdefinitions/DynamicGradientDefinition';
 import { spreadColorProps } from '../../utils/spreadColorProps';
 
 export const laser = ({

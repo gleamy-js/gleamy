@@ -1,6 +1,6 @@
 import { FC, useEffect, useCallback, useRef, useContext } from 'react';
 import { setDPI } from '../../utils/setDPI';
-import { TStaticGradient, TDynamicGradient } from 'src/lib/types';
+import { TStaticGradient, TDynamicGradient } from '../../../types';
 import { GleamyContext } from '../../provider';
 
 export const GradientMaterial: FC<TStaticGradient | TDynamicGradient> = ({
@@ -155,7 +155,7 @@ export const GradientMaterial: FC<TStaticGradient | TDynamicGradient> = ({
     }
 
     if (edgeSize && clipPathRef) {
-      const createdMaterialInversed = material({
+      context.strokeStyle = material({
         context,
         pos0X: fromY,
         pos0Y: fromX,
@@ -165,7 +165,6 @@ export const GradientMaterial: FC<TStaticGradient | TDynamicGradient> = ({
         animatorY: xY.x,
         spread,
       });
-      context.strokeStyle = createdMaterialInversed;
       createEdge(context);
     } else if (edgeSize) {
       const createdMaterialInversed = material({

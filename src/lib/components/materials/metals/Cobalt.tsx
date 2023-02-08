@@ -1,6 +1,6 @@
 import { Metal } from '../../base-materials';
 import { cobalt } from '../../../definitions';
-import { TCobalt } from 'src/lib/types';
+import { TCobalt } from '../../../../types';
 
 export const Cobalt = ({
   width = '100%',

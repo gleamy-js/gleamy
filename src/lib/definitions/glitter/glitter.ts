@@ -1,5 +1,5 @@
 import Color from 'color';
-import { ParticleDefinition } from 'src/lib/types';
+import { ParticleDefinition } from '../../../types';
 
 const round = (value: number): number => {
   return Math.round(value * 100) / 100;

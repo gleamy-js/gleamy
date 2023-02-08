@@ -1,4 +1,4 @@
-import { ColorStops } from '../types';
+import { ColorStops } from '../../types';
 
 export const spreadColorProps = (
   colorStops: ColorStops,

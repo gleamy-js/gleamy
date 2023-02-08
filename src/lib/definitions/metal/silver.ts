@@ -1,4 +1,4 @@
-import { StaticGradientDefinition } from '../../types';
+import { StaticGradientDefinition } from '../../../types';
 import { spreadColorProps } from '../../utils/spreadColorProps';
 
 const colorStops = [
