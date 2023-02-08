@@ -7,8 +7,10 @@
 
 # testing
 /coverage
+/coverage-ts
 
 # production
+/.husky
 /build
 
 # misc
