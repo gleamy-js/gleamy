@@ -42,7 +42,7 @@
     "eject": "react-scripts eject",
     "prettier": "prettier --write .",
     "prepare": "husky install",
-    "lint": "eslint -c .eslintrc.js --ext .ts ./src/**/ --fix",
+    "lint": "eslint -c .eslintrc.js --ext .ts ./src/**/*.tsx --fix",
     "ts-coverage": "typescript-coverage-report",
     "test:coverage": "react-scripts test --env=jsdom --watchAll=false --coverage",
     "test:badges": "npm run test:coverage  && jest-coverage-badges"
