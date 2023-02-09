@@ -32,7 +32,4 @@ module.exports = {
     JSX: 'readonly',
   },
   root: true,
-  exclude: [
-    "./dis/*.*"
-  ]
 };
