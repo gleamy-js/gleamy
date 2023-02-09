@@ -8,6 +8,12 @@ import { uglify } from 'rollup-plugin-uglify';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import cleaner from 'rollup-plugin-cleaner';
 
+const externals = {
+  react: 'React',
+  'react-dom': 'ReactDOM',
+  'react-scripts': 'ReactScripts',
+};
+
 export default [
   {
     input: 'src/index.ts',
@@ -34,10 +40,11 @@ export default [
       }),
       uglify(),
     ],
+    external: Object.keys(externals),
   },
   {
     input: 'dist/esm/index.d.ts',
-    output: [{ file: 'dist/index.d.ts', format: 'esm' }],
-    plugins: [resolve(), peerDepsExternal(), dts.default()],
+    output: [{ file: 'dist/index.d.ts', format: 'esm', sourcemap: true }],
+    plugins:  [peerDepsExternal(), typescript({ filterRoot: "dist/", allowUnreachableCode: false, compilerOptions: { typeRoots: ['/dist']} }), dts.default(), resolve()],
   },
 ];

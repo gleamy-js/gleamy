@@ -1,0 +1,24 @@
+name: 🧪 Test pull request
+
+on:
+  push:
+    branches:
+      - '**/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        env:
+          NODE_ENV: production
+        with:
+          node-version: '16.x'
+          cache: yarn
+      - run: yarn install
+      - run: yarn run lint
+      - run: yarn run test:coverage
+      - run: yarn run ts-coverage
+      - run: yarn run build
+      - run: yarn publish --access=public --dry-run --no-git-tag-version
