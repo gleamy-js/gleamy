@@ -34,15 +34,13 @@
     "noPropertyAccessFromIndexSignature": true,
     "declaration": true,
     "declarationDir": "./",
-    "declarationMap": false,
+    "declarationMap": true,
     "sourceMap": true,
     "baseUrl": "./",
     "rootDir": "./src",
     "outDir": "/dist"
   },
-  "include": [
-    "src"
-  ],
+  "include": ["src"],
   "exclude": [
     "coverage/**",
     "coverage-ts/**",
