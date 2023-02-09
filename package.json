@@ -4,6 +4,10 @@
   "version": "0.0.0",
   "license": "NPOSL-3.0",
   "private": false,
+  "author":  {
+    "name" : "Jordy Houtman",
+    "url" : "http://www.spacecorp.nl/"
+  },
   "homepage": "https://www.gleamy.dev/",
   "main": "dist/cjs/index.js",
   "type": "module",
@@ -16,7 +20,7 @@
     "dist"
   ],
   "engines": {
-    "node": "^18.14.0"
+    "node": "^>16.4.0"
   },
   "repository": {
     "type": "git",
