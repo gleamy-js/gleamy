@@ -1,8 +1,8 @@
-import { TBase } from 'src/types/base-materials/TBase';
-import { Spread } from 'src/types/generics';
+import { TBaseComponent } from '../TBaseComponent';
+import { Spread } from '../../generics';
 
-export type TGunmetal = TBase & {
-  spread: Spread;
-  noFill: boolean;
-  edgeThickness: number;
+export type TGunmetal = TBaseComponent & {
+  spread?: Spread;
+  noFill?: boolean;
+  edgeThickness?: number;
 };
