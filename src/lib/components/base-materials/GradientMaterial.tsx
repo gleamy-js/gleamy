@@ -4,17 +4,18 @@ import { TStaticGradient, TDynamicGradient } from '../../../types';
 import { GleamyContext } from '../../provider';
 
 export const GradientMaterial: FC<TStaticGradient | TDynamicGradient> = ({
-  width,
-  height,
-  noFill,
-  spread,
-  acceleration,
+  width = 100,
+  height = 100,
+  noFill = false,
+  spread = 0.5,
+  acceleration = 1,
   material,
-  clipPathRef,
-  className,
-  edgeThickness,
+  clipPathRef = null,
+  className = undefined,
+  edgeThickness = 0,
   rendering = true,
   clipPathScale = 1,
+  backgroundColor = undefined,
   ...props
 }) => {
   const gleamyProvider = useContext(GleamyContext);
@@ -29,7 +30,6 @@ export const GradientMaterial: FC<TStaticGradient | TDynamicGradient> = ({
         return {
           canvas: null,
           context: null,
-          position: { top: 0, left: 0 },
           elementWidth: 0,
           elementHeight: 0,
         };
@@ -42,7 +42,6 @@ export const GradientMaterial: FC<TStaticGradient | TDynamicGradient> = ({
         willReadFrequently: true,
       });
 
-      const position = canvasReference.getBoundingClientRect();
       const elementWidth = canvasReference.width;
       const elementHeight = canvasReference.height;
 
@@ -54,7 +53,7 @@ export const GradientMaterial: FC<TStaticGradient | TDynamicGradient> = ({
         canvas.height = elementHeight;
       }
 
-      return { canvas, context, position, elementWidth, elementHeight };
+      return { canvas, context, elementWidth, elementHeight };
     },
     [gleamyProvider.devicePixelRatio],
   );
@@ -111,7 +110,7 @@ export const GradientMaterial: FC<TStaticGradient | TDynamicGradient> = ({
       return;
     }
 
-    const { context, position, elementWidth, elementHeight } = memoizedCanvas(
+    const { context, elementWidth, elementHeight } = memoizedCanvas(
       canvasRef.current,
     );
 
@@ -122,11 +121,23 @@ export const GradientMaterial: FC<TStaticGradient | TDynamicGradient> = ({
     const { animators } = gleamyProvider;
     const defaultAnimator = gleamyProvider.defaultAnimator || 'mouseMove';
     const xY = animators ? animators[defaultAnimator] : { x: 0, y: 0 };
-
-    const fromX = position.left;
-    const fromY = position.top;
     const toPosX = xY.x ** acceleration || 1;
     const toPosY = xY.y ** acceleration || 1;
+
+    const toY = toPosY;
+    const toX = toPosX;
+
+    const fromX = -toY - elementWidth * 2;
+    const fromY = -toX - elementHeight * 2;
+
+    context.clearRect(0, 0, elementWidth, elementHeight);
+
+    if (backgroundColor) {
+      context.fillStyle = backgroundColor.toString();
+      context.fillRect(0, 0, elementWidth, elementHeight);
+    }
+
+    context.save();
 
     const createdMaterial = material({
       context,
@@ -138,8 +149,6 @@ export const GradientMaterial: FC<TStaticGradient | TDynamicGradient> = ({
       animatorY: xY.y,
       spread,
     });
-
-    context.clearRect(0, 0, elementWidth, elementHeight);
 
     if (clipPathRef) {
       createClipPath(context);

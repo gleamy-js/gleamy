@@ -47,19 +47,19 @@ const createParticles = ({
 };
 
 export const ParticleMaterial: FC<TParticle> = ({
-  clipPathRef,
-  width,
-  height,
-  acceleration,
+  clipPathRef = null,
+  width = 100,
+  height = 100,
+  acceleration = 1,
   material,
-  className,
-  particleCoverage,
+  className = undefined,
+  particleCoverage = 5,
   particleSize = 1,
-  depth,
-  particleColor,
-  depthAlpha,
+  depth = 25,
+  particleColor = 'silver',
+  depthAlpha = true,
   rendering = true,
-  // backgroundColor,
+  backgroundColor = undefined,
   clipPathScale = 1,
   intensity = 0.5,
   ...props
@@ -155,7 +155,7 @@ export const ParticleMaterial: FC<TParticle> = ({
       canvasRef.current,
     );
 
-    if (!context) {
+    if (context === null || gleamyProvider.defaultAnimator) {
       return;
     }
 
@@ -172,6 +172,12 @@ export const ParticleMaterial: FC<TParticle> = ({
     const fromY = -toX - elementWidth * 2;
 
     context.clearRect(0, 0, elementWidth, elementHeight);
+
+    if (backgroundColor) {
+      context.fillStyle = backgroundColor.toString();
+      context.fillRect(0, 0, elementWidth, elementHeight);
+    }
+
     context.save();
 
     if (clipPathRef && context) {
@@ -179,6 +185,7 @@ export const ParticleMaterial: FC<TParticle> = ({
     }
 
     particles.current.forEach((layer, index) => {
+      // console.log('rendering particle');
       const selectedParticleColor = Array.isArray(particleColor)
         ? particleColor[index % particleColor.length]
         : particleColor;
@@ -206,7 +213,7 @@ export const ParticleMaterial: FC<TParticle> = ({
 
       layer.forEach((particle: ParticleLayer) => {
         context.beginPath();
-        context.arc.apply(null, particle);
+        context.arc(...particle);
         context.fill();
         context.closePath();
       });
