@@ -3,6 +3,9 @@ export const setDPI = (canvas: HTMLCanvasElement, dpi: number): void => {
     return;
   }
 
+  canvas.style.width = canvas.style.width || `${canvas.width}px`;
+  canvas.style.height = canvas.style.height || `${canvas.height}px`;
+
   const scaleFactor = dpi / 96;
   const width = parseFloat(canvas.style.width);
   const height = parseFloat(canvas.style.height);
