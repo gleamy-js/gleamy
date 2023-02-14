@@ -1,12 +1,11 @@
-import { TBase } from 'src/types/base-materials/TBase';
-import { Color, One, ParticleColor, PercentageRange } from 'src/types/generics';
+import { TBaseComponent } from '../TBaseComponent';
+import { Intensity, ParticleColor, PercentageRange } from '../../generics';
 
-export type TGlitter = TBase & {
-  glitterColor: ParticleColor | ParticleColor[];
-  glitterCoverage: PercentageRange;
-  glitterSize: number;
-  depth: number;
-  depthAlpha: boolean;
-  intensity: One;
-  backgroundColor?: Color;
+export type TGlitter = TBaseComponent & {
+  glitterColor?: ParticleColor | ParticleColor[];
+  glitterCoverage?: PercentageRange;
+  glitterSize?: number;
+  depth?: number;
+  depthAlpha?: boolean;
+  intensity?: Intensity;
 };
