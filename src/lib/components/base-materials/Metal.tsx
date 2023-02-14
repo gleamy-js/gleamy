@@ -5,6 +5,7 @@ import { TStaticGradient } from '../../../types';
 
 const Material = styled(GradientMaterial)`
   display: block;
+  position: relative;
 `;
 
 export const Metal = forwardRef((props: TStaticGradient, ref) => (
