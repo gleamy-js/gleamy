@@ -17,6 +17,7 @@ export const Glitter = ({
   backgroundColor,
   clipPathScale,
   intensity,
+  animator,
   ...props
 }: TGlitter): JSX.Element => (
   <Particle
@@ -35,6 +36,7 @@ export const Glitter = ({
     backgroundColor={backgroundColor}
     clipPathScale={clipPathScale}
     intensity={intensity}
+    animator={animator}
     {...props}
   />
 );

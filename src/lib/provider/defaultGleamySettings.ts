@@ -1,10 +1,8 @@
-import {
-  AnimatorKey,
-  TOptionalProviderValues,
-} from '../../types/provider/TProvider';
+import { Animator } from '../../types/animators';
+import { TOptionalProviderValues } from '../../types/provider/TProvider';
 
 const DEFAULT_DEVICE_PIXEL_RATIO = 96;
-const DEFAULT_ANIMATOR: AnimatorKey = 'mouseMove';
+const DEFAULT_ANIMATOR: Animator = 'mouseMove';
 const STATIC_ANIMATION_X_VALUE = 1000;
 const STATIC_ANIMATION_Y_VALUE = 1000;
 const DEFAULT_FPS = 60;

@@ -19,6 +19,7 @@ export const Iridescent = ({
   rendering,
   backgroundColor,
   clipPathScale,
+  animator,
   ...props
 }: TIridescent): JSX.Element => (
   <Component
@@ -34,6 +35,7 @@ export const Iridescent = ({
     rendering={rendering}
     backgroundColor={backgroundColor}
     clipPathScale={clipPathScale}
+    animator={animator}
     {...props}
   />
 );

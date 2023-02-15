@@ -14,6 +14,7 @@ export const Gunmetal = ({
   rendering,
   backgroundColor,
   clipPathScale,
+  animator,
   ...props
 }: TGunmetal): JSX.Element => (
   <Metal
@@ -29,6 +30,7 @@ export const Gunmetal = ({
     backgroundColor={backgroundColor}
     rendering={rendering}
     clipPathScale={clipPathScale}
+    animator={animator}
     {...props}
   />
 );

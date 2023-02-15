@@ -14,6 +14,7 @@ export const Steel = ({
   rendering,
   backgroundColor,
   clipPathScale,
+  animator,
   ...props
 }: TSteel): JSX.Element => (
   <Metal
@@ -29,6 +30,7 @@ export const Steel = ({
     backgroundColor={backgroundColor}
     rendering={rendering}
     clipPathScale={clipPathScale}
+    animator={animator}
     {...props}
   />
 );

@@ -1,3 +1,4 @@
+import { MaterialAnimator } from '../animators';
 import { Acceleration, clipPathRef, clipPathScale, Color } from '../generics';
 
 export type TBaseComponent = {
@@ -9,5 +10,6 @@ export type TBaseComponent = {
   backgroundColor?: Color;
   clipPathRef?: clipPathRef;
   clipPathScale?: clipPathScale;
+  animator?: MaterialAnimator;
   [key: string]: unknown;
 };

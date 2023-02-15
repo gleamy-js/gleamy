@@ -29,6 +29,7 @@ export const Holographic = ({
   backgroundColor,
   clipPathScale = 1,
   clipPathScaleMetal = 1,
+  animator,
   ...props
 }: THolographic): JSX.Element => (
   <CompoundContainer className={className} {...props}>
@@ -43,6 +44,7 @@ export const Holographic = ({
       material={laser}
       rendering={rendering}
       clipPathScale={clipPathScale}
+      animator={animator}
     />
     <StyledMetal
       spread={spread}
@@ -55,6 +57,7 @@ export const Holographic = ({
       rendering={rendering}
       backgroundColor={backgroundColor}
       clipPathScale={clipPathScaleMetal}
+      animator={animator}
     />
   </CompoundContainer>
 );

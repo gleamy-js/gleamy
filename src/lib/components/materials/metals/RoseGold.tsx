@@ -14,6 +14,7 @@ export const RoseGold = ({
   rendering,
   backgroundColor,
   clipPathScale,
+  animator,
   ...props
 }: TRoseGold): JSX.Element => (
   <Metal
@@ -29,6 +30,7 @@ export const RoseGold = ({
     backgroundColor={backgroundColor}
     rendering={rendering}
     clipPathScale={clipPathScale}
+    animator={animator}
     {...props}
   />
 );

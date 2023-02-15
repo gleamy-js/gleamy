@@ -16,6 +16,7 @@ export const GradientMaterial: FC<TStaticGradient | TDynamicGradient> = ({
   rendering = true,
   clipPathScale = 1,
   backgroundColor = undefined,
+  animator,
   ...props
 }) => {
   const gleamyProvider = useContext(GleamyContext);
@@ -118,9 +119,20 @@ export const GradientMaterial: FC<TStaticGradient | TDynamicGradient> = ({
       return;
     }
 
+    let xY;
     const { animators } = gleamyProvider;
-    const defaultAnimator = gleamyProvider.defaultAnimator || 'mouseMove';
-    const xY = animators ? animators[defaultAnimator] : { x: 0, y: 0 };
+    const defaultAnimator = animators
+      ? animators[gleamyProvider.defaultAnimator || 'mouseMove']
+      : { x: 0, y: 0 };
+
+    if (animator && typeof animator === 'string') {
+      xY = animators ? animators[animator] : defaultAnimator;
+    } else if (animator && typeof animator === 'function') {
+      xY = animator();
+    } else {
+      xY = defaultAnimator;
+    }
+
     const toPosX = xY.x ** acceleration || 1;
     const toPosY = xY.y ** acceleration || 1;
 
