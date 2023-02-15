@@ -14,6 +14,7 @@ export const Copper = ({
   rendering,
   backgroundColor,
   clipPathScale,
+  animator,
   ...props
 }: TCopper): JSX.Element => (
   <Metal
@@ -29,6 +30,7 @@ export const Copper = ({
     backgroundColor={backgroundColor}
     rendering={rendering}
     clipPathScale={clipPathScale}
+    animator={animator}
     {...props}
   />
 );

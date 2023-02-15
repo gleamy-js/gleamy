@@ -14,6 +14,7 @@ export const Lacquer = ({
   rendering,
   backgroundColor,
   clipPathScale,
+  animator,
   ...props
 }: TLacquer): JSX.Element => (
   <Plastic
@@ -29,6 +30,7 @@ export const Lacquer = ({
     rendering={rendering}
     backgroundColor={backgroundColor}
     clipPathScale={clipPathScale}
+    animator={animator}
     {...props}
   />
 );

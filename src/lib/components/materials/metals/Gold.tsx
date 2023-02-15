@@ -14,6 +14,7 @@ export const Gold = ({
   rendering,
   backgroundColor,
   clipPathScale,
+  animator,
   ...props
 }: TGold): JSX.Element => (
   <Metal
@@ -29,6 +30,7 @@ export const Gold = ({
     backgroundColor={backgroundColor}
     rendering={rendering}
     clipPathScale={clipPathScale}
+    animator={animator}
     {...props}
   />
 );

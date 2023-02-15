@@ -1,22 +1,15 @@
 import { ReactNode } from 'react';
+import { Animator, AnimatorReturn } from '../animators';
 
 export type Animators = {
-  mouseMove: {
-    x: number;
-    y: number;
-  };
-  scroll: {
-    x: number;
-    y: number;
-  };
+  mouseMove: AnimatorReturn;
+  scroll: AnimatorReturn;
 };
-
-export type AnimatorKey = 'mouseMove' | 'scroll';
 
 export type TProviderValues = {
   fps: number;
   devicePixelRatio: number;
-  defaultAnimator: AnimatorKey;
+  defaultAnimator: Animator;
   animators: Animators;
   windowSize: {
     x: number;
