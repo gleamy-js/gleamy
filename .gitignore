@@ -28,3 +28,7 @@ yarn-debug.log*
 yarn-error.log*
 
 /to-be-worked-on
+
+# yalc
+.yalc
+.yalc.lock

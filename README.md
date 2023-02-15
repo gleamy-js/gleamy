@@ -1,5 +1,7 @@
 [![.github/workflows/npm-publish-github-packages.yml](https://github.com/gleamy-js/gleamy/actions/workflows/npm-publish-github-packages.yml/badge.svg)](https://github.com/gleamy-js/gleamy/actions/workflows/npm-publish-github-packages.yml)
 
+[![gleamy](https://snyk.io/advisor/npm-package/gleamy/badge.svg)](https://snyk.io/advisor/npm-package/gleamy)
+
 # 🪩 Gleamy
 Gleamy is free for non-profit organizations:
 See: https://opensource.org/licenses/NPOSL-3.0
