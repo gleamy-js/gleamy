@@ -13,12 +13,14 @@ jobs:
       - uses: actions/setup-node@v3
         env:
           NODE_ENV: production
+          NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
         with:
+          always-auth: true
           node-version: '16.x'
+          registry-url: 'https://registry.npmjs.org/'
           cache: yarn
       - run: yarn install
       - run: yarn run lint
       - run: yarn run test:coverage
       - run: yarn run ts-coverage
       - run: yarn run build
-      - run: yarn publish --access=public --dry-run --no-git-tag-version
