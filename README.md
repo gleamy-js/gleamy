@@ -1,6 +1,5 @@
-[![.github/workflows/npm-publish-github-packages.yml](https://github.com/gleamy-js/gleamy/actions/workflows/npm-publish-github-packages.yml/badge.svg)](https://github.com/gleamy-js/gleamy/actions/workflows/npm-publish-github-packages.yml)
+[![Published version](https://img.shields.io/npm/v/gleamy?label=💅🏼%20version)](https://www.npmjs.com/package/gleamy) [![NPM Minified size](https://img.shields.io/bundlephobia/min/gleamy?label=🧳%20minified%20size)](https://www.npmjs.com/package/gleamy) [![NPM Downloads](https://img.shields.io/npm/dw/gleamy?label=🦚%20NPM%20downloads)](https://www.npmjs.com/package/gleamy) [![snyk gleamy stats](https://snyk.io/advisor/npm-package/gleamy/badge.svg)](https://snyk.io/advisor/npm-package/gleamy) [![gleamy license](https://img.shields.io/npm/l/gleamy)](https://snyk.io/advisor/npm-package/gleamy)
 
-[![gleamy](https://snyk.io/advisor/npm-package/gleamy/badge.svg)](https://snyk.io/advisor/npm-package/gleamy)
 
 # 🪩 Gleamy
 Gleamy is free for non-profit organizations:
