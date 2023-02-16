@@ -10,7 +10,6 @@
 /coverage-ts
 
 # production
-/.husky
 /build
 /dist
 _bundles
