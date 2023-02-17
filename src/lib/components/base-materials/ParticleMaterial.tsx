@@ -56,10 +56,10 @@ export const ParticleMaterial: FC<TParticle> = ({
   particleCoverage = 5,
   particleSize = 1,
   depth = 25,
-  particleColor = 'silver',
+  particleColor = '#ff9300',
   depthAlpha = true,
   rendering = true,
-  backgroundColor = undefined,
+  backgroundColor = 'black',
   clipPathScale = 1,
   intensity = 0.5,
   animator,
@@ -156,7 +156,7 @@ export const ParticleMaterial: FC<TParticle> = ({
       canvasRef.current,
     );
 
-    if (context === null || gleamyProvider.defaultAnimator) {
+    if (context === null || !gleamyProvider.defaultAnimator) {
       return;
     }
 
