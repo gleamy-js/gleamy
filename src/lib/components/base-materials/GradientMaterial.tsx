@@ -8,7 +8,7 @@ export const GradientMaterial: FC<TStaticGradient | TDynamicGradient> = ({
   height = 100,
   noFill = false,
   spread = 0.5,
-  acceleration = 1,
+  acceleration = 0.9,
   material,
   clipPathRef = null,
   className = undefined,
