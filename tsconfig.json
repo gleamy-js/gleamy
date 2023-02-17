@@ -11,7 +11,7 @@
     "allowSyntheticDefaultImports": true,
     "noFallthroughCasesInSwitch": true,
     "types": ["node", "jest", "@testing-library/jest-dom"],
-    "noUnusedLocals": false,
+    "noUnusedLocals": true,
     "noUnusedParameters": true,
     "preserveSymlinks": true,
     "pretty": true,
