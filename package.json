@@ -1,7 +1,7 @@
 {
   "name": "gleamy",
   "description": "Create a reactive shiny background in different materials",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "license": "NPOSL-3.0",
   "private": false,
   "author": {
