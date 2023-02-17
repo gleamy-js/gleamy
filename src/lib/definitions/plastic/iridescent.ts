@@ -12,7 +12,7 @@ export const iridescent = ({
   spread,
 }: DynamicGradientDefinition): CanvasGradient => {
   const hueDegrees = Math.floor(
-    (Math.atan2(animatorY - pos0Y, animatorX - pos0X) * 180) / Math.PI,
+    (Math.atan2(animatorX, animatorY) * 180) / Math.PI,
   );
   const material = context.createLinearGradient(pos0X, pos0Y, pos1X, pos1Y);
   const bgTranslucency = 0.8;
@@ -20,7 +20,7 @@ export const iridescent = ({
   const bgLightness = 50;
   const shineLightness = 80;
   const saturation = 100;
-  const colorOffsetDeg = 180;
+  const colorOffsetDeg = 90;
 
   const colorStops = [
     [
