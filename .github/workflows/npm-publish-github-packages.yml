@@ -1,9 +1,9 @@
 name: 🪩 Create Gleamy NPM package
 
 on:
-  create:
+  push:
     tags:
-      - v*
+      - '*'
 
 jobs:
   test:
