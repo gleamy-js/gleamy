@@ -3,12 +3,12 @@
 Thank you for considering supporting the development of Gleamy, a project that aims to bring shine, sparkle, and glimmer to the web.
 
 ## Financial Support
-*`Has yet to be set-up.`*
+
+_`Has yet to be set-up.`_
 
 ~~If you would like to make a financial contribution to Gleamy, you can do so via our Open Collective page:~~
 
 <!-- ```~~<a href="https://opencollective.com/gleamy" target="_new"><img src="https://img.shields.io/badge/Donate-Open%20Collective-blue" alt="Donate"></a>~~```-->
-
 
 ## Donate
 
