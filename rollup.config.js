@@ -45,6 +45,15 @@ export default [
   {
     input: 'dist/esm/index.d.ts',
     output: [{ file: 'dist/index.d.ts', format: 'esm', sourcemap: true }],
-    plugins:  [peerDepsExternal(), typescript({ filterRoot: "dist/", allowUnreachableCode: false, compilerOptions: { typeRoots: ['/dist']} }), dts.default(), resolve()],
+    plugins: [
+      peerDepsExternal(),
+      typescript({
+        filterRoot: 'dist/',
+        allowUnreachableCode: false,
+        compilerOptions: { typeRoots: ['/dist'] },
+      }),
+      dts.default(),
+      resolve(),
+    ],
   },
 ];

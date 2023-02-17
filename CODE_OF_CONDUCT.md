@@ -13,7 +13,7 @@ To help us create a safe and fun space for everyone, we ask that all contributor
 - Be respectful and kind to others
 - Refrain from using derogatory language or engaging in any form of discrimination or harassment
 - Be open to feedback and constructive criticism
-- Keep in mind that people with ADHD, ASD or any  neurodivergent minds can have a different perception and understanding than you may do. So be patient and understanding in communication and problem-solving
+- Keep in mind that people with ADHD, ASD or any neurodivergent minds can have a different perception and understanding than you may do. So be patient and understanding in communication and problem-solving
 - Dipping things in gold is awesome, but let's keep the metaphorical gold-dipping to our code, not our interactions with others
 
 ## Our Responsibilities
