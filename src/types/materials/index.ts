@@ -8,7 +8,7 @@ export type TMaterialNames =
   | 'Gold'
   | 'Silver'
   | 'BlueSteel'
-  | 'Cobal'
+  | 'Cobalt'
   | 'Copper'
   | 'Gold'
   | 'Gunmetal'
