@@ -98,6 +98,7 @@ export const GradientMaterial: FC<TStaticGradient | TDynamicGradient> = ({
       clipPaths.current.forEach((path) => {
         context.beginPath();
         const p = new Path2D(path);
+        context.closePath();
         context.stroke(p);
       });
       context.restore();
