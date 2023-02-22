@@ -23,7 +23,6 @@ export const GradientMaterial: FC<TStaticGradient | TDynamicGradient> = ({
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const clipPaths = useRef<string[]>([]);
-  const edgeSize = edgeThickness;
 
   const memoizedCanvas = useCallback(
     (canvasReference: HTMLCanvasElement) => {
@@ -75,9 +74,9 @@ export const GradientMaterial: FC<TStaticGradient | TDynamicGradient> = ({
   const createClipPath = useCallback(
     (context: CanvasRenderingContext2D) => {
       context.save();
-      context.beginPath();
-      context.scale(clipPathScale, clipPathScale);
       clipPaths.current.forEach((path) => {
+        context.beginPath();
+        context.scale(clipPathScale, clipPathScale);
         const p = new Path2D(path);
         context.closePath();
         context.clip(p);
@@ -88,12 +87,12 @@ export const GradientMaterial: FC<TStaticGradient | TDynamicGradient> = ({
 
   const createEdge = useCallback(
     (context: CanvasRenderingContext2D) => {
-      if (!(context && edgeSize)) {
+      if (!(context && edgeThickness)) {
         return;
       }
 
       context.lineWidth =
-        edgeSize * ((gleamyProvider?.devicePixelRatio || 1) * 96);
+      edgeThickness * ((gleamyProvider?.devicePixelRatio || 1) * 96);
 
       context.save();
       clipPaths.current.forEach((path) => {
@@ -103,7 +102,7 @@ export const GradientMaterial: FC<TStaticGradient | TDynamicGradient> = ({
       });
       context.restore();
     },
-    [edgeSize, clipPaths, gleamyProvider.devicePixelRatio],
+    [edgeThickness, clipPaths, gleamyProvider.devicePixelRatio],
   );
 
   const render = useCallback(() => {
@@ -175,7 +174,7 @@ export const GradientMaterial: FC<TStaticGradient | TDynamicGradient> = ({
       context.restore();
     }
 
-    if (edgeSize && clipPathRef) {
+    if (edgeThickness && clipPathRef) {
       context.strokeStyle = material({
         context,
         pos0X: fromY,
@@ -187,7 +186,7 @@ export const GradientMaterial: FC<TStaticGradient | TDynamicGradient> = ({
         spread,
       });
       createEdge(context);
-    } else if (edgeSize) {
+    } else if (edgeThickness) {
       const createdMaterialInversed = material({
         context,
         pos0X: fromY,
@@ -201,15 +200,15 @@ export const GradientMaterial: FC<TStaticGradient | TDynamicGradient> = ({
       context.strokeStyle = createdMaterialInversed;
       context.save();
       context.beginPath();
-      context.lineWidth = edgeSize;
+      context.lineWidth = edgeThickness;
 
       context.fillStyle = createdMaterialInversed;
       context.rect(
-        edgeSize / 2,
-        edgeSize / 2,
-        elementWidth - edgeSize,
-        elementHeight - edgeSize,
-      ); // edges needs halving
+        edgeThickness / 2,
+        edgeThickness / 2,
+        elementWidth - edgeThickness,
+        elementHeight - edgeThickness,
+      );
       context.stroke();
       context.closePath();
       context.restore();
@@ -227,7 +226,7 @@ export const GradientMaterial: FC<TStaticGradient | TDynamicGradient> = ({
     createEdge,
     clipPathRef,
     spread,
-    edgeSize,
+    edgeThickness,
     rendering,
     gleamyProvider,
   ]);
