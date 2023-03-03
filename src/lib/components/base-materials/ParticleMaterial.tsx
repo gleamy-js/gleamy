@@ -57,7 +57,7 @@ export const ParticleMaterial: FC<TParticle> = ({
   particleSize = 1,
   depth = 25,
   particleColor = '#ff9300',
-  depthAlpha = true,
+  depthAlpha = false,
   rendering = true,
   backgroundColor = 'black',
   clipPathScale = 1,
@@ -69,6 +69,10 @@ export const ParticleMaterial: FC<TParticle> = ({
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const clipPaths = useRef<string[]>([]);
   const particles = useRef<ParticleLayer[][]>([]);
+  const particleDepthLayers =
+    Array.isArray(particleColor) && particleColor.length > depth
+      ? particleColor.length
+      : depth;
 
   const memoizedCanvas = useCallback(
     (canvasReference: HTMLCanvasElement) => {
@@ -107,7 +111,7 @@ export const ParticleMaterial: FC<TParticle> = ({
 
       if (!particles.current.length) {
         const newParticles = createParticles({
-          depth,
+          depth: particleDepthLayers,
           particleAmount,
           particleSize,
           elementWidth,
