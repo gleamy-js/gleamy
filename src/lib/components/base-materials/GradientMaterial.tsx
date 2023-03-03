@@ -92,15 +92,15 @@ export const GradientMaterial: FC<TStaticGradient | TDynamicGradient> = ({
       }
 
       context.lineWidth =
-      edgeThickness * ((gleamyProvider?.devicePixelRatio || 1) * 96);
+        edgeThickness * ((gleamyProvider?.devicePixelRatio || 1) * 96);
 
       context.save();
+      context.beginPath();
       clipPaths.current.forEach((path) => {
-        context.beginPath();
         const p = new Path2D(path);
-        context.closePath();
         context.stroke(p);
       });
+      context.closePath();
       context.restore();
     },
     [edgeThickness, clipPaths, gleamyProvider.devicePixelRatio],
