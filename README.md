@@ -5,14 +5,62 @@
 Gleamy is free for non-profit organizations:
 See: https://opensource.org/licenses/NPOSL-3.0
 
-![](readme-assets/gleamy.png)
+![](readme-assets/gleamy-logo.svg)
 
-Give it a shot!
+Welcome to Gleamy, the magical React component library that's sure to make your projects sparkle! With Gleamy, you'll be able to bring a pinata to a funeral, a disco ball to a library, and even a unicorn to a board meeting! It's like adding a touch of fairy dust to even the most dull-as-dishwater projects. With its stunning colors and dynamic animations, Gleamy is sure to turn heads and leave your users mesmerized. So why settle for boring and bland when you can add a little sparkle to your life with Gleamy?
+
+## Documentation
+
+For complete documentation, see https://www.gleamy.dev/documentation
+
+## To try it before installing, use the _`Glamgenerator`_
+
+You can try the configurator here: https://www.gleamy.dev. After being done, you can use the "code"-tab in the editor to copy your code and use it directly in your project, or save your swatches first.
+
+## Quick start
+
+### Installation
+
+Yarn:
 
 ```
-    import { GleamyProvider, Glitter } from 'gleamy';
-
-    <GleamyProvider>
-        <Glitter intensity={0.5} depth={50} depthAlpha={true} height={200} width={200} glitterCoverage={5} glitterSize={1} glitterColor={"gold"} />
-    </GleamyProvider>
+yarn add gleamy
 ```
+
+NPM:
+
+```
+npm install gleamy
+```
+
+### Usage
+
+Add some shine:
+
+```
+import { GleamyProvider, Gold } from 'gleamy';
+
+<GleamyProvider>
+    <Gold height="200" width="200" />
+</GleamyProvider>
+```
+
+Add some sparkle:
+
+```
+import { GleamyProvider, Glitter } from 'gleamy';
+
+<GleamyProvider>
+    <Glitter height="200" width="200" />
+</GleamyProvider>
+```
+
+### Available components:
+
+**Metals**: BlueSteel, Cobalt, Copper, Gold, Gunmetal, RoseGold, Silver, Steel
+
+**Plastics**: Iridescent, Lacquer
+
+**Particles**: Glitter
+
+**Compound**: Holographic
