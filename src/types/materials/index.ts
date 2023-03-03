@@ -22,5 +22,4 @@ export type TMaterialNames =
   | 'Glitter'
 
   // Compound
-  | 'Glass'
   | 'Holographic';
