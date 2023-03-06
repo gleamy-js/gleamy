@@ -1,4 +1,9 @@
-import { Spread } from '../generics';
+import {
+  HueRotationSpeed,
+  Spread,
+  Translucency,
+  FoilVisibility,
+} from '../generics';
 
 export interface DynamicGradientDefinition {
   context: CanvasRenderingContext2D;
@@ -9,4 +14,7 @@ export interface DynamicGradientDefinition {
   spread: Spread;
   animatorX: number;
   animatorY: number;
+  translucency?: Translucency;
+  hueRotationSpeed?: HueRotationSpeed;
+  foilVisibility?: FoilVisibility;
 }

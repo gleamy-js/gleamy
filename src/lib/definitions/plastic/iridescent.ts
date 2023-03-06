@@ -10,40 +10,44 @@ export const iridescent = ({
   animatorX,
   animatorY,
   spread,
+  translucency = 1,
+  hueRotationSpeed = 1,
+  foilVisibility = 0.5,
 }: DynamicGradientDefinition): CanvasGradient => {
-  const hueDegrees = Math.floor(
-    (Math.atan2(animatorX, animatorY) * 180) / Math.PI,
-  );
+  const hueDegrees =
+    Math.floor((Math.atan2(animatorX, animatorY) * 180) / Math.PI) **
+    hueRotationSpeed;
   const material = context.createLinearGradient(pos0X, pos0Y, pos1X, pos1Y);
-  const bgTranslucency = 0.8;
-  const shineTranslucency = 1;
-  const bgLightness = 50;
-  const shineLightness = 80;
-  const saturation = 100;
-  const colorOffsetDeg = 90;
+  const saturation = 100 ** hueRotationSpeed;
+  const colorOffsetDeg = 45 ** hueRotationSpeed;
+
+  console.log(foilVisibility);
 
   const colorStops = [
     [
       0,
       `hsla(${
         hueDegrees - colorOffsetDeg
-      }, ${saturation}%, ${bgLightness}%, ${bgTranslucency})`,
-    ],
-    [
-      0.25,
-      `hsla(${hueDegrees}, ${saturation}%, ${shineLightness}%, ${shineTranslucency})`,
+      }, ${saturation}%, 50%, ${foilVisibility})`,
     ],
     [
       0.5,
       `hsla(${
+        hueDegrees - colorOffsetDeg
+      }, ${saturation}%, 50%, ${foilVisibility})`,
+    ],
+    [0.6, `hsla(${-hueDegrees}, ${saturation}%, 50%, ${translucency})`],
+    [
+      0.7,
+      `hsla(${
         hueDegrees + colorOffsetDeg
-      }, ${saturation}%, ${bgLightness}%, ${bgTranslucency})`,
+      }, ${saturation}%, 50%, ${foilVisibility})`,
     ],
     [
       1,
       `hsla(${
-        hueDegrees - colorOffsetDeg
-      }, ${saturation}%, ${bgLightness}%, ${bgTranslucency})`,
+        hueDegrees + colorOffsetDeg
+      }, ${saturation}%, 50%, ${foilVisibility})`,
     ],
   ];
 

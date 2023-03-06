@@ -3,8 +3,8 @@ import { glitter } from '../../../definitions';
 import { TGlitter } from '../../../../types';
 
 export const Glitter = ({
-  width,
-  height,
+  width = 100,
+  height = 100,
   acceleration,
   clipPathRef,
   glitterCoverage,

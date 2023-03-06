@@ -10,13 +10,16 @@ export const holographic = ({
   animatorX,
   animatorY,
   spread,
+  foilVisibility = 0.05,
+  translucency = 1,
+  hueRotationSpeed = 1,
 }: DynamicGradientDefinition): CanvasGradient => {
-  const nonHologrpahicAlpha = 0.05;
   const colorSpreadOffset = 80;
   const material = context.createLinearGradient(pos0X, pos0Y, pos1X, pos1Y);
-  const angleDeg = Math.floor(
-    (Math.atan2(animatorY - pos0Y, animatorX - pos0X) * 180) / Math.PI,
-  );
+  const angleDeg =
+    Math.floor(
+      (Math.atan2(animatorY - pos0Y, animatorX - pos0X) * 180) / Math.PI,
+    ) ** hueRotationSpeed;
   const saturation = 100;
   const flatSaturationReduction = 100;
 
@@ -39,24 +42,32 @@ export const holographic = ({
   const colorStops = [
     [
       0,
-      `hsla(${bg}, ${bgSaturation}%, ${bgLightness}%, ${nonHologrpahicAlpha})`,
+      `hsla(${bg}, ${bgSaturation}%, ${bgLightness}%, ${foilVisibility.toString()})`,
     ],
     [
       0.4,
-      `hsla(${angleDeg - colorSpreadOffset}, ${saturation}%, 50%, ${
-        saturation / 10
-      })`,
+      `hsla(
+        ${angleDeg - colorSpreadOffset}, ${saturation}%, 
+        50%, 
+        ${saturation / 10},
+        ${foilVisibility.toString()}
+      )`,
     ],
-    [0.5, `hsla(${angleDeg}, ${saturation}%, 50%, ${saturation / 10})`],
+    [
+      0.5,
+      `hsla(${angleDeg}, ${saturation}%, 50%, ${
+        saturation / 10
+      }, ${translucency.toString()})`,
+    ],
     [
       0.6,
       `hsla(${angleDeg + colorSpreadOffset}, ${saturation}%, 50%, ${
         saturation / 10
-      })`,
+      }, ${foilVisibility.toString()})`,
     ],
     [
       1,
-      `hsla(${bg}, ${bgSaturation}%, ${bgLightness}%, ${nonHologrpahicAlpha})`,
+      `hsla(${bg}, ${bgSaturation}%, ${bgLightness}%, ${foilVisibility.toString()})`,
     ],
   ];
 

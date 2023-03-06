@@ -12,6 +12,12 @@ export type PercentageRange =
 
 export type Spread = One | 1;
 
+export type Translucency = number;
+
+export type FoilVisibility = number;
+
+export type HueRotationSpeed = number;
+
 export type Acceleration = One | Two;
 
 export type Intensity = One;
