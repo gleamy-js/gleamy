@@ -1,4 +1,4 @@
-export const setDPI = (canvas: HTMLCanvasElement, dpi: number): void => {
+export const setDPI = (canvas: HTMLCanvasElement, dpr: number): void => {
   if (!canvas) {
     return;
   }
@@ -6,7 +6,7 @@ export const setDPI = (canvas: HTMLCanvasElement, dpi: number): void => {
   canvas.style.width = canvas.style.width || `${canvas.width}px`;
   canvas.style.height = canvas.style.height || `${canvas.height}px`;
 
-  const scaleFactor = dpi / 96;
+  const scaleFactor = dpr / 96;
   const width = parseFloat(canvas.style.width);
   const height = parseFloat(canvas.style.height);
 
@@ -25,7 +25,6 @@ export const setDPI = (canvas: HTMLCanvasElement, dpi: number): void => {
     return;
   }
 
-  // All good? make adjust
   canvas.width = Math.ceil(width * scaleFactor);
   canvas.height = Math.ceil(height * scaleFactor);
 

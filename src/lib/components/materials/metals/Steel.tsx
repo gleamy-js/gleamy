@@ -3,8 +3,8 @@ import { steel } from '../../../definitions';
 import { TSteel } from '../../../../types';
 
 export const Steel = ({
-  width = '100%',
-  height = '100%',
+  width = 100,
+  height = 100,
   noFill = false,
   acceleration = 1,
   clipPathRef = null,

@@ -3,8 +3,8 @@ import { blueSteel } from '../../../definitions';
 import { TBlueSteel } from '../../../../types';
 
 export const BlueSteel = ({
-  width = '100%',
-  height = '100%',
+  width = 100,
+  height = 100,
   noFill = false,
   acceleration = 1,
   clipPathRef = null,

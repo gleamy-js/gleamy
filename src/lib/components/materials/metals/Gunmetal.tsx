@@ -3,8 +3,8 @@ import { gunmetal } from '../../../definitions';
 import { TGunmetal } from '../../../../types';
 
 export const Gunmetal = ({
-  width = '100%',
-  height = '100%',
+  width = 100,
+  height = 100,
   noFill = false,
   acceleration = 1,
   clipPathRef = null,

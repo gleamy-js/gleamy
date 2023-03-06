@@ -3,8 +3,8 @@ import { gold } from '../../../definitions';
 import { TGold } from '../../../../types';
 
 export const Gold = ({
-  width = '100%',
-  height = '100%',
+  width = 100,
+  height = 100,
   noFill = false,
   acceleration = 1,
   clipPathRef = null,
