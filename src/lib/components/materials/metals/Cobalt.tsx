@@ -3,8 +3,8 @@ import { cobalt } from '../../../definitions';
 import { TCobalt } from '../../../../types';
 
 export const Cobalt = ({
-  width = '100%',
-  height = '100%',
+  width = 100,
+  height = 100,
   noFill = false,
   acceleration = 1,
   clipPathRef = null,

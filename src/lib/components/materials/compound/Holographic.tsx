@@ -15,8 +15,8 @@ const StyledMetal = styled(Metal)`
 `;
 
 export const Holographic = ({
-  width = '100%',
-  height = '100%',
+  width = 100,
+  height = 100,
   noFill = false,
   acceleration = 1,
   edgeThickness = 1,

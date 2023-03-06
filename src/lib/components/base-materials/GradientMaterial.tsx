@@ -47,12 +47,6 @@ export const GradientMaterial: FC<TStaticGradient | TDynamicGradient> = ({
 
       setDPI(canvas, (gleamyProvider?.devicePixelRatio || 1) * 96);
 
-      // Always set html element if not defined;
-      if (elementWidth && elementHeight && canvas) {
-        canvas.width = elementWidth;
-        canvas.height = elementHeight;
-      }
-
       return { canvas, context, elementWidth, elementHeight };
     },
     [gleamyProvider.devicePixelRatio],
@@ -91,8 +85,9 @@ export const GradientMaterial: FC<TStaticGradient | TDynamicGradient> = ({
         return;
       }
 
-      context.lineWidth =
-        edgeThickness * ((gleamyProvider?.devicePixelRatio || 1) * 96);
+      context.lineWidth = Math.ceil(
+        edgeThickness * ((gleamyProvider?.devicePixelRatio || 1) / 96),
+      );
 
       context.save();
       context.beginPath();
@@ -204,12 +199,23 @@ export const GradientMaterial: FC<TStaticGradient | TDynamicGradient> = ({
       context.lineWidth = edgeThickness;
 
       context.fillStyle = createdMaterialInversed;
-      context.rect(
-        edgeThickness / 2,
-        edgeThickness / 2,
-        elementWidth - edgeThickness,
-        elementHeight - edgeThickness,
-      );
+
+      if (edgeThickness === 1) {
+        context.rect(
+          edgeThickness / 2,
+          edgeThickness / 2,
+          elementWidth - edgeThickness,
+          elementHeight - edgeThickness,
+        );
+      } else {
+        context.rect(
+          edgeThickness,
+          edgeThickness,
+          elementWidth - edgeThickness * 2,
+          elementHeight - edgeThickness * 2,
+        );
+      }
+
       context.stroke();
       context.closePath();
       context.restore();

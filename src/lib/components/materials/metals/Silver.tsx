@@ -3,8 +3,8 @@ import { silver } from '../../../definitions';
 import { TSilver } from '../../../../types';
 
 export const Silver = ({
-  width = '100%',
-  height = '100%',
+  width = 100,
+  height = 100,
   noFill = false,
   acceleration = 1,
   clipPathRef = null,

@@ -93,6 +93,8 @@ export const ParticleMaterial: FC<TParticle> = ({
         willReadFrequently: true,
       });
       const position = canvasReference.getBoundingClientRect();
+      setDPI(canvas, (gleamyProvider?.devicePixelRatio || 1) * 96);
+
       const elementWidth = canvasReference.width;
       const elementHeight = canvasReference.height;
 
@@ -100,14 +102,6 @@ export const ParticleMaterial: FC<TParticle> = ({
       const particleAmount =
         (maxParticleAmount / 100) *
         (particleCoverage > 100 ? 100 : particleCoverage);
-
-      setDPI(canvas, (gleamyProvider?.devicePixelRatio || 1) * 96);
-
-      // Always set html element if not defined;
-      if (elementWidth && elementHeight && canvas) {
-        canvas.width = elementWidth;
-        canvas.height = elementHeight;
-      }
 
       if (!particles.current.length) {
         const newParticles = createParticles({
@@ -140,13 +134,14 @@ export const ParticleMaterial: FC<TParticle> = ({
 
   const createClipPath = useCallback(
     (context: CanvasRenderingContext2D) => {
-      context.beginPath();
-      context.scale(clipPathScale, clipPathScale);
+      context.save();
       clipPaths.current.forEach((path) => {
+        context.beginPath();
+        context.scale(clipPathScale, clipPathScale);
         const p = new Path2D(path);
+        context.closePath();
         context.clip(p);
       });
-      context.closePath();
     },
     [clipPaths, clipPathScale],
   );
@@ -200,7 +195,6 @@ export const ParticleMaterial: FC<TParticle> = ({
     }
 
     particles.current.forEach((layer, index) => {
-      // console.log('rendering particle');
       const selectedParticleColor = Array.isArray(particleColor)
         ? particleColor[index % particleColor.length]
         : particleColor;
@@ -255,7 +249,6 @@ export const ParticleMaterial: FC<TParticle> = ({
     gleamyProvider,
   ]);
 
-  // init
   useEffect(() => {
     requestAnimationFrame(render);
   }, [render]);

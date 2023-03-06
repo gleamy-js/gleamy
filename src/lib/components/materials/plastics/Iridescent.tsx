@@ -8,8 +8,8 @@ const Component = styled(Plastic)`
 `;
 
 export const Iridescent = ({
-  width = '100%',
-  height = '100%',
+  width = 100,
+  height = 100,
   noFill = false,
   acceleration = 1,
   clipPathRef = null,

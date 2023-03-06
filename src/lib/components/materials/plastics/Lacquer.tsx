@@ -3,8 +3,8 @@ import { lacquer } from '../../../definitions';
 import { TLacquer } from '../../../../types';
 
 export const Lacquer = ({
-  width = '100%',
-  height = '100%',
+  width = 100,
+  height = 100,
   noFill = false,
   acceleration = 1,
   clipPathRef = null,
