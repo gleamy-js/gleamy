@@ -1,8 +1,10 @@
 import { TBaseComponent } from '../TBaseComponent';
-import { Spread } from '../../generics';
+import { FoilVisibility, Spread, Translucency } from '../../generics';
 
 export type TLacquer = TBaseComponent & {
   spread?: Spread;
   noFill?: boolean;
   edgeThickness?: number;
+  translucency?: Translucency;
+  foilVisibility?: FoilVisibility;
 };

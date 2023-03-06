@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { TDynamicGradient } from '../../../types';
 
 const Material = styled(GradientMaterial)`
-  mix-blend-mode: overlay;
+  mix-blend-mode: screen;
   position: relative;
 `;
 

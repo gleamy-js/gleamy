@@ -20,6 +20,9 @@ export const Iridescent = ({
   backgroundColor,
   clipPathScale,
   animator,
+  translucency = 1,
+  foilVisibility = 0.5,
+  hueRotationSpeed = 1,
   ...props
 }: TIridescent): JSX.Element => (
   <Component
@@ -36,6 +39,9 @@ export const Iridescent = ({
     backgroundColor={backgroundColor}
     clipPathScale={clipPathScale}
     animator={animator}
+    translucency={translucency}
+    hueRotationSpeed={hueRotationSpeed}
+    foilVisibility={foilVisibility}
     {...props}
   />
 );

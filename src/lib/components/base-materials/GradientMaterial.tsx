@@ -4,6 +4,7 @@ import { TStaticGradient, TDynamicGradient } from '../../../types';
 import { GleamyContext } from '../../provider';
 
 export const GradientMaterial: FC<TStaticGradient | TDynamicGradient> = ({
+  animator,
   width = 100,
   height = 100,
   noFill = false,
@@ -15,8 +16,10 @@ export const GradientMaterial: FC<TStaticGradient | TDynamicGradient> = ({
   edgeThickness = 0,
   rendering = true,
   clipPathScale = 1,
-  backgroundColor = undefined,
-  animator,
+  backgroundColor,
+  translucency = undefined,
+  hueRotationSpeed = undefined,
+  foilVisibility = undefined,
   ...props
 }) => {
   const gleamyProvider = useContext(GleamyContext);
@@ -155,6 +158,11 @@ export const GradientMaterial: FC<TStaticGradient | TDynamicGradient> = ({
       animatorX: xY.x,
       animatorY: xY.y,
       spread,
+      translucency: typeof translucency === 'number' ? translucency : undefined,
+      hueRotationSpeed:
+        typeof hueRotationSpeed === 'number' ? hueRotationSpeed : undefined,
+      foilVisibility:
+        typeof foilVisibility === 'number' ? foilVisibility : undefined,
     });
 
     if (clipPathRef) {
@@ -180,6 +188,12 @@ export const GradientMaterial: FC<TStaticGradient | TDynamicGradient> = ({
         animatorX: xY.y,
         animatorY: xY.x,
         spread,
+        translucency:
+          typeof translucency === 'number' ? translucency : undefined,
+        hueRotationSpeed:
+          typeof hueRotationSpeed === 'number' ? hueRotationSpeed : undefined,
+        foilVisibility:
+          typeof foilVisibility === 'number' ? foilVisibility : undefined,
       });
       createEdge(context);
     } else if (edgeThickness) {
@@ -236,6 +250,7 @@ export const GradientMaterial: FC<TStaticGradient | TDynamicGradient> = ({
     edgeThickness,
     rendering,
     gleamyProvider,
+    backgroundColor,
   ]);
 
   useEffect(() => {

@@ -1,5 +1,11 @@
 import { TBaseComponent } from '../TBaseComponent';
-import { clipPathRef, clipPathScale, Spread } from '../../generics';
+import {
+  clipPathRef,
+  clipPathScale,
+  HueRotationSpeed,
+  Spread,
+  FoilVisibility,
+} from '../../generics';
 
 export type THolographic = TBaseComponent & {
   edgeThickness?: number;
@@ -8,4 +14,6 @@ export type THolographic = TBaseComponent & {
   clipPathScaleMetal?: clipPathScale;
   noFill?: boolean;
   spread?: Spread;
+  hueRotationSpeed?: HueRotationSpeed;
+  foilVisibility?: FoilVisibility;
 };

@@ -14,6 +14,8 @@ export const Lacquer = ({
   rendering,
   backgroundColor,
   clipPathScale,
+  translucency = 1,
+  foilVisibility = 0.02,
   animator,
   ...props
 }: TLacquer): JSX.Element => (
@@ -31,6 +33,8 @@ export const Lacquer = ({
     backgroundColor={backgroundColor}
     clipPathScale={clipPathScale}
     animator={animator}
+    translucency={translucency}
+    foilVisibility={foilVisibility}
     {...props}
   />
 );

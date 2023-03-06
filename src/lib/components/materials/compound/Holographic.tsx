@@ -29,6 +29,8 @@ export const Holographic = ({
   backgroundColor,
   clipPathScale = 1,
   clipPathScaleMetal = 1,
+  hueRotationSpeed = 1.2,
+  foilVisibility = 0.02,
   animator,
   ...props
 }: THolographic): JSX.Element => (
@@ -45,6 +47,8 @@ export const Holographic = ({
       rendering={rendering}
       clipPathScale={clipPathScale}
       animator={animator}
+      foilVisibility={foilVisibility}
+      hueRotationSpeed={hueRotationSpeed}
     />
     <StyledMetal
       spread={spread}
