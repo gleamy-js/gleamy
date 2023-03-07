@@ -88,10 +88,7 @@ export const GradientMaterial: FC<TStaticGradient | TDynamicGradient> = ({
         return;
       }
 
-      context.lineWidth = Math.ceil(
-        edgeThickness * ((gleamyProvider?.devicePixelRatio || 1) / 96),
-      );
-
+      context.lineWidth = edgeThickness;
       context.save();
       context.beginPath();
       clipPaths.current.forEach((path) => {
@@ -211,24 +208,14 @@ export const GradientMaterial: FC<TStaticGradient | TDynamicGradient> = ({
       context.save();
       context.beginPath();
       context.lineWidth = edgeThickness;
-
       context.fillStyle = createdMaterialInversed;
 
-      if (edgeThickness === 1) {
-        context.rect(
-          edgeThickness / 2,
-          edgeThickness / 2,
-          elementWidth - edgeThickness,
-          elementHeight - edgeThickness,
-        );
-      } else {
-        context.rect(
-          edgeThickness,
-          edgeThickness,
-          elementWidth - edgeThickness * 2,
-          elementHeight - edgeThickness * 2,
-        );
-      }
+      context.rect(
+        0,
+        0,
+        elementWidth / (gleamyProvider?.devicePixelRatio || 1),
+        elementHeight / (gleamyProvider?.devicePixelRatio || 1),
+      );
 
       context.stroke();
       context.closePath();
