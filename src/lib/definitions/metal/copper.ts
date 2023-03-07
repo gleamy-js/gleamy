@@ -2,18 +2,17 @@ import { StaticGradientDefinition } from '../../../types';
 import { spreadColorProps } from '../../utils/spreadColorProps';
 
 const colorStops = [
-  [0, '#6c3325'],
-  [0.08, '#f0d5b2'],
-  [0.15, '#fbf3d1'],
-  [0.2, '#d39b76'],
-  [0.3, '#9f7928'],
-  [0.4, '#6a3223'],
-  [0.5, '#4d120e'],
-  [0.7, '#5d4a1f'],
-  [0.75, '#561710'],
-  [0.92, '#5c1e13'],
-  [1.0, '#6c3325'],
+  [0, '#ffd4ac'],
+  [0.08, '#a87a60'],
+  [0.15, '#cf855b'],
+  [0.2, '#efa16d'],
+  [0.3, '#83614b'],
+  [0.4, '#e4b291'],
+  [0.5, '#774532'],
+  [0.7, '#984d22'],
+  [1.0, '#ffd4ac'],
 ];
+
 
 export const copper = ({
   context,
