@@ -214,6 +214,7 @@ export const ParticleMaterial: FC<TParticle> = ({
         intensity,
       });
 
+      context.setTransform(1, 0, 0, 1, 0, 0);
       context.save();
       const addedMarginWidth = elementWidth / 2;
       const addedMarginHeight = elementHeight / 2;
@@ -221,13 +222,14 @@ export const ParticleMaterial: FC<TParticle> = ({
       context.translate(-addedMarginWidth, -addedMarginHeight);
 
       layer.forEach((particle: ParticleLayer) => {
+        context.save();
         context.beginPath();
         context.arc(...particle);
         context.fill();
         context.closePath();
+        context.restore();
       });
       context.restore();
-      context.setTransform(1, 0, 0, 1, 0, 0);
     });
 
     context.restore();
