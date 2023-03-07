@@ -21,8 +21,6 @@ export const iridescent = ({
   const saturation = 100 ** hueRotationSpeed;
   const colorOffsetDeg = 45 ** hueRotationSpeed;
 
-  console.log(foilVisibility);
-
   const colorStops = [
     [
       0,
