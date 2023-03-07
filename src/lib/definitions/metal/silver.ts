@@ -2,15 +2,15 @@ import { StaticGradientDefinition } from '../../../types';
 import { spreadColorProps } from '../../utils/spreadColorProps';
 
 const colorStops = [
-  [0.1, '#4d4d4e'],
-  [0.4, '#f7f7f9'],
-  [0.4, '#95969a'],
-  [0.5, '#5e5e5e'],
-  [0.55, '#a7abae'],
-  [0.56, '#7d7c81'],
-  [0.75, '#2e272e'],
-  [0.8, '#68696b'],
-  [1, '#4d4d4e'],
+  [0, '#fff6ee'],
+  [0.08, '#b5a89b'],
+  [0.15, '#f0e4dc'],
+  [0.2, '#f0e6e0'],
+  [0.3, '#dacbc3'],
+  [0.4, '#fff7f0'],
+  [0.5, '#afa7a0'],
+  [0.7, '#9e938b'],
+  [1, '#fff6ee'],
 ];
 
 export const silver = ({
