@@ -2,7 +2,7 @@ import Color from 'color';
 import { ParticleDefinition } from '../../../types';
 
 const round = (value: number): number => {
-  return Math.floor(value * 100) / 1000;
+  return Math.floor(value * 100) / 100;
 };
 
 export const glitter = ({
@@ -21,21 +21,16 @@ export const glitter = ({
       : 1;
 
   const alpha = depthAlpha ? round(depthPercentage) : 0.5;
-  const phase =
-    10 *
-    round(
-      intensity *
-        Math.sin(
-          ((depthPercentage % 2 === 0 ? pos1X : pos1Y) / 1000) * Math.PI,
-        ),
-    );
+  const phase = round(
+    intensity *
+      Math.sin(((depthPercentage % 2 === 0 ? pos1X : pos1Y) / 1000) * Math.PI),
+  );
 
   let color = Color('black');
 
   if (particleColor === 'holographic') {
     const rotation =
       rotationSpeed *
-      10 *
       round(
         Math.sin(
           ((depthPercentage % 2 === 0 ? pos1X : pos1Y) / 1000) * Math.PI,
