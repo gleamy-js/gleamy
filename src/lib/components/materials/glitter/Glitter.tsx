@@ -17,6 +17,7 @@ export const Glitter = ({
   backgroundColor,
   clipPathScale,
   intensity,
+  hueRotationSpeed,
   animator,
   ...props
 }: TGlitter): JSX.Element => (
@@ -37,6 +38,7 @@ export const Glitter = ({
     clipPathScale={clipPathScale}
     intensity={intensity}
     animator={animator}
+    hueRotationSpeed={hueRotationSpeed}
     {...props}
   />
 );

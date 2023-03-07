@@ -13,7 +13,13 @@ export const glitter = ({
   depthPercentage,
   depthAlpha,
   intensity,
+  hueRotationSpeed,
 }: ParticleDefinition): void => {
+  const rotationSpeed =
+    hueRotationSpeed && typeof hueRotationSpeed === 'number'
+      ? hueRotationSpeed
+      : 1;
+
   const alpha = depthAlpha ? round(depthPercentage) : 0.5;
   const phase =
     10 *
@@ -27,9 +33,14 @@ export const glitter = ({
   let color = Color('black');
 
   if (particleColor === 'holographic') {
-    const rotation = round(
-      Math.sin(((depthPercentage % 2 === 0 ? pos1X : pos1Y) / 100) * Math.PI),
-    );
+    const rotation =
+      rotationSpeed *
+      10 *
+      round(
+        Math.sin(
+          ((depthPercentage % 2 === 0 ? pos1X : pos1Y) / 1000) * Math.PI,
+        ),
+      );
 
     color = Color('blue')
       .rotate(rotation * 360)

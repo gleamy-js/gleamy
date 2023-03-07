@@ -1,4 +1,9 @@
-import { ParticleColor, Intensity, PercentageRange } from '../generics';
+import {
+  ParticleColor,
+  Intensity,
+  PercentageRange,
+  HueRotationSpeed,
+} from '../generics';
 
 export interface ParticleDefinition {
   context: CanvasRenderingContext2D;
@@ -8,4 +13,5 @@ export interface ParticleDefinition {
   depthPercentage: number | PercentageRange;
   depthAlpha: boolean;
   intensity: Intensity;
+  hueRotationSpeed?: HueRotationSpeed;
 }
