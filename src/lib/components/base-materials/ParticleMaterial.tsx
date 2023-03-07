@@ -62,6 +62,7 @@ export const ParticleMaterial: FC<TParticle> = ({
   backgroundColor = 'black',
   clipPathScale = 1,
   intensity = 0.5,
+  hueRotationSpeed = 1,
   animator,
   ...props
 }) => {
@@ -212,6 +213,7 @@ export const ParticleMaterial: FC<TParticle> = ({
         depthPercentage,
         depthAlpha,
         intensity,
+        hueRotationSpeed,
       });
 
       context.setTransform(1, 0, 0, 1, 0, 0);
@@ -248,6 +250,7 @@ export const ParticleMaterial: FC<TParticle> = ({
     particleColor,
     rendering,
     depth,
+    hueRotationSpeed,
     gleamyProvider,
   ]);
 

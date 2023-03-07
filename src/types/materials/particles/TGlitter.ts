@@ -1,5 +1,10 @@
 import { TBaseComponent } from '../TBaseComponent';
-import { Intensity, ParticleColor, PercentageRange } from '../../generics';
+import {
+  HueRotationSpeed,
+  Intensity,
+  ParticleColor,
+  PercentageRange,
+} from '../../generics';
 
 export type TGlitter = TBaseComponent & {
   glitterColor?: ParticleColor | ParticleColor[];
@@ -8,4 +13,5 @@ export type TGlitter = TBaseComponent & {
   depth?: number;
   depthAlpha?: boolean;
   intensity?: Intensity;
+  hueRotationSpeed?: HueRotationSpeed;
 };
