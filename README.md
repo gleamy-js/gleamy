@@ -2,9 +2,6 @@
 
 # 🪩 Gleamy
 
-Gleamy is free for non-profit organizations:
-See: https://www.gnu.org/licenses/gpl-3.0.en.html
-
 ![](readme-assets/gleamy-logo.svg)
 
 Welcome to Gleamy, the magical React component library that's sure to make your projects sparkle! With Gleamy, you'll be able to bring a pinata to a funeral, a disco ball to a library, and even a unicorn to a board meeting! It's like adding a touch of fairy dust to even the most dull-as-dishwater projects. With its stunning colors and dynamic animations, Gleamy is sure to turn heads and leave your users mesmerized. So why settle for boring and bland when you can add a little sparkle to your life with Gleamy?
@@ -64,3 +61,22 @@ import { GleamyProvider, Glitter } from 'gleamy';
 **Particles**: Glitter
 
 **Compound**: Holographic
+
+
+## Support Gleamy
+If you find Gleamy useful, please consider supporting its development! You can make a one-time donation on Ko-fi, PayPal or become a  supporter on GitHub or Open Collective. Your support will help me continue to improve and maintain this project. Additionally, if you're unable to contribute financially, leaving a star on the GitHub repo or sharing Gleamy with others is also greatly appreciated. Thank you for your support!"
+
+
+Fun me on **OpenCollective**:  
+[![Fund me using Open Collective](https://img.shields.io/opencollective/all/gleamy)](https://opencollective.com/gleamy)
+
+Sponsor me on **Github**:  
+[![Sponsor me on GitHub](https://img.shields.io/github/sponsors/gleamy-js)](https://github.com/sponsors/gleamy-js)
+
+
+Buy me a Coffee on **KoFi**:  
+[![Buy me a KoFi](https://img.shields.io/badge/Caffeine-me-red)](https://ko-fi.com/gleamy)
+
+Make a donation using **PayPal**:  
+[![Support me via PayPal](https://img.shields.io/badge/Support-me-darkblue)](https://www.paypal.com/donate/?business=MR2D54SP47FHA&no_recurring=0&item_name=Help+me+support+Gleamy+NPM+package+for+further+development+and+support%21%0A%0AThank+you%21&currency_code=EUR)
+
