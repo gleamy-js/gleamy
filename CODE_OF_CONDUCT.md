@@ -18,8 +18,9 @@ To help us create a safe and fun space for everyone, we ask that all contributor
 
 ## Our Responsibilities
 
-As maintainers of this project, we are responsible for enforcing this code of conduct. If you notice any violations, please report them to us by emailing **yet_to_be@created**. We will review all reports promptly and take appropriate action.
-Our Pledge to You
+As maintainers of this project, we are responsible for enforcing this code of conduct. If you notice any violations, please report them to us by [contacting us via the contact form on the Gleamy website](https//www.gleamy.dev). We will review all reports promptly and take appropriate action.
+
+## Our Pledge to You
 
 As a contributor to Gleamy, you have our pledge that we will uphold these standards and ensure that everyone feels safe, valued, and welcome. We will also work to improve the project and foster a community that is diverse, inclusive, and fun.
 

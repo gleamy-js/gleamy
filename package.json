@@ -1,8 +1,8 @@
 {
   "name": "gleamy",
-  "description": "Create a reactive shiny background in different materials",
-  "license": "NPOSL-3.0",
-  "version": "0.0.14",
+  "description": "Create a reactive shiny element in different materials",
+  "version": "1.0.0",
+  "license": "GNU GPLv3",
   "private": false,
   "author": {
     "name": "Jordy Houtman",
