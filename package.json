@@ -1,7 +1,7 @@
 {
   "name": "gleamy",
   "description": "Create a reactive shiny element in different materials",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "GNU GPLv3",
   "private": false,
   "author": {
