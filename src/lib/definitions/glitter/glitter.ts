@@ -23,7 +23,9 @@ export const glitter = ({
   const alpha = depthAlpha ? round(depthPercentage) : 0.5;
   const phase = round(
     intensity *
-      Math.sin(((depthPercentage % 2 === 0 ? pos1X : pos1Y) / 1000) * Math.PI),
+      Math.sin(
+        ((depthPercentage % 2 === 0 ? pos1X : pos1Y) / 1000) * Math.PI * alpha,
+      ),
   );
 
   let color = Color('black');
