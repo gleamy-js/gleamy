@@ -4,11 +4,11 @@ Thank you for considering supporting the development of Gleamy, a project that a
 
 ## Financial Support
 
-_`Has yet to be set-up.`_
+**Please support me on:**
 
-~~If you would like to make a financial contribution to Gleamy, you can do so via our Open Collective page:~~
+- [PayPal](https://www.paypal.com/donate/?business=MR2D54SP47FHA&no_recurring=0&item_name=Help+me+support+Gleamy+NPM+package+for+further+development+and+support%21%0A%0AThank+you%21&currency_code=EUR)
+- [KoFi](https://ko-fi.com/gleamy)
 
-<!-- ```~~<a href="https://opencollective.com/gleamy" target="_new"><img src="https://img.shields.io/badge/Donate-Open%20Collective-blue" alt="Donate"></a>~~```-->
 
 ## Donate
 
@@ -16,6 +16,7 @@ Your donation will go towards:
 
 - Maintaining and improving the project
 - Paying for hosting and other infrastructure costs
+- Responsible promotional materials
 - Supporting the contributors who make Gleamy possible
 
 We appreciate every contribution, no matter how small. Every little bit helps us continue to make the web a brighter and more glittery place.
