@@ -9,7 +9,6 @@ Thank you for considering supporting the development of Gleamy, a project that a
 - [PayPal](https://www.paypal.com/donate/?business=MR2D54SP47FHA&no_recurring=0&item_name=Help+me+support+Gleamy+NPM+package+for+further+development+and+support%21%0A%0AThank+you%21&currency_code=EUR)
 - [KoFi](https://ko-fi.com/gleamy)
 
-
 ## Donate
 
 Your donation will go towards:

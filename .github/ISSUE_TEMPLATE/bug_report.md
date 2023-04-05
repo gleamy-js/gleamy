@@ -4,7 +4,6 @@ about: Create a report to help us improve
 title: ''
 labels: bug
 assignees: ''
-
 ---
 
 🐞 Oh no, you found a bug!
@@ -13,6 +12,7 @@ Description:
 [Description of the bug, preferably with a funny analogy or pun.]
 
 Steps to reproduce:
+
 1. [Step one]
 2. [Step two]
 3. [Step three]
