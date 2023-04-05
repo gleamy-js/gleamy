@@ -13,7 +13,6 @@ const colorStops = [
   [1.0, '#ffd4ac'],
 ];
 
-
 export const copper = ({
   context,
   pos0X,

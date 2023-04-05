@@ -62,10 +62,9 @@ import { GleamyProvider, Glitter } from 'gleamy';
 
 **Compound**: Holographic
 
-
 ## Support Gleamy
-If you find Gleamy useful, please consider supporting its development! You can make a one-time donation on Ko-fi, PayPal or become a  supporter on GitHub or Open Collective. Your support will help me continue to improve and maintain this project. Additionally, if you're unable to contribute financially, leaving a star on the GitHub repo or sharing Gleamy with others is also greatly appreciated. Thank you for your support!"
 
+If you find Gleamy useful, please consider supporting its development! You can make a one-time donation on Ko-fi, PayPal or become a supporter on GitHub or Open Collective. Your support will help me continue to improve and maintain this project. Additionally, if you're unable to contribute financially, leaving a star on the GitHub repo or sharing Gleamy with others is also greatly appreciated. Thank you for your support!"
 
 Fun me on **OpenCollective**:  
 [![Fund me using Open Collective](https://img.shields.io/opencollective/all/gleamy)](https://opencollective.com/gleamy)
@@ -73,10 +72,8 @@ Fun me on **OpenCollective**:
 Sponsor me on **Github**:  
 [![Sponsor me on GitHub](https://img.shields.io/github/sponsors/gleamy-js)](https://github.com/sponsors/gleamy-js)
 
-
 Buy me a Coffee on **KoFi**:  
 [![Buy me a KoFi](https://img.shields.io/badge/Caffeine-me-red)](https://ko-fi.com/gleamy)
 
 Make a donation using **PayPal**:  
 [![Support me via PayPal](https://img.shields.io/badge/Support-me-darkblue)](https://www.paypal.com/donate/?business=MR2D54SP47FHA&no_recurring=0&item_name=Help+me+support+Gleamy+NPM+package+for+further+development+and+support%21%0A%0AThank+you%21&currency_code=EUR)
-
