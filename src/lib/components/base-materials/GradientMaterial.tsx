@@ -2,6 +2,7 @@ import { FC, useEffect, useCallback, useRef, useContext } from 'react';
 import { setDPI } from '../../utils/setDPI';
 import { TStaticGradient, TDynamicGradient } from '../../../types';
 import { GleamyContext } from '../../provider';
+import { drawMaterial } from '../../utils/drawMaterial';
 
 export const GradientMaterial: FC<TStaticGradient | TDynamicGradient> = ({
   animator,
@@ -221,10 +222,6 @@ export const GradientMaterial: FC<TStaticGradient | TDynamicGradient> = ({
       context.closePath();
       context.restore();
     }
-
-    if (rendering) {
-      requestAnimationFrame(render);
-    }
   }, [
     noFill,
     acceleration,
@@ -235,14 +232,16 @@ export const GradientMaterial: FC<TStaticGradient | TDynamicGradient> = ({
     clipPathRef,
     spread,
     edgeThickness,
-    rendering,
     gleamyProvider,
     backgroundColor,
   ]);
 
   useEffect(() => {
-    requestAnimationFrame(render);
-  }, [render]);
+    if (rendering) {
+      const fps = gleamyProvider?.fps || 60;
+      drawMaterial({ drawFunction: render, fps });
+    }
+  }, [gleamyProvider, render, rendering]);
 
   return (
     <canvas
