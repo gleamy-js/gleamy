@@ -2,6 +2,7 @@ import { FC, useEffect, useCallback, useContext, useRef } from 'react';
 import { setDPI } from '../../utils/setDPI';
 import { TParticle } from '../../../types';
 import { GleamyContext } from '../../provider';
+import { drawMaterial } from '../../utils/drawMaterial';
 
 type CreateParticles = {
   depth: number;
@@ -235,10 +236,6 @@ export const ParticleMaterial: FC<TParticle> = ({
     });
 
     context.restore();
-
-    if (rendering) {
-      requestAnimationFrame(render);
-    }
   }, [
     intensity,
     acceleration,
@@ -255,8 +252,11 @@ export const ParticleMaterial: FC<TParticle> = ({
   ]);
 
   useEffect(() => {
-    requestAnimationFrame(render);
-  }, [render]);
+    if (rendering) {
+      const fps = gleamyProvider?.fps || 60;
+      drawMaterial({ drawFunction: render, fps });
+    }
+  }, [gleamyProvider, render, rendering]);
 
   return (
     <canvas
