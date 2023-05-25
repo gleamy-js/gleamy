@@ -6,6 +6,7 @@ import { TParticle } from '../../../types';
 const Material = styled(ParticleMaterial)`
   mix-blend-mode: normal;
   position: relative;
+  transform: translateZ(0);
 `;
 
 export const Particle = forwardRef((props: TParticle, ref) => (

@@ -217,25 +217,24 @@ export const ParticleMaterial: FC<TParticle> = ({
         hueRotationSpeed,
       });
 
-      context.setTransform(1, 0, 0, 1, 0, 0);
       context.save();
+      context.setTransform(1, 0, 0, 1, 0, 0);
       const addedMarginWidth = elementWidth / 2;
       const addedMarginHeight = elementHeight / 2;
       context.translate(addedMarginWidth, addedMarginHeight);
       context.translate(-addedMarginWidth, -addedMarginHeight);
 
+      const beginPath = context.beginPath.bind(context);
+      const arc = context.arc.bind(context);
+      const fill = context.fill.bind(context);
+
       layer.forEach((particle: ParticleLayer) => {
-        context.save();
-        context.beginPath();
-        context.arc(...particle);
-        context.fill();
-        context.closePath();
-        context.restore();
+        beginPath();
+        arc(...particle);
+        fill();
       });
       context.restore();
     });
-
-    context.restore();
   }, [
     intensity,
     acceleration,
