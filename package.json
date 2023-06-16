@@ -4,6 +4,7 @@
   "version": "1.1.1",
   "license": "MIT",
   "private": false,
+  "sideEffects": false,
   "author": {
     "name": "Jordy Houtman",
     "url": "http://www.spacecorp.nl/"
@@ -61,7 +62,7 @@
     "postinstall": "husky install",
     "prepack": "pinst --disable",
     "postpack": "pinst --enable",
-    "start": "yarn install && react-scripts start",
+    "dev": "rollup -c rollup.config.dev.js --watch --bundleConfigAsCjs --makeAbsoluteExternalsRelative",
     "pre:build": "yarn audit",
     "build": "rollup -c --bundleConfigAsCjs --makeAbsoluteExternalsRelative",
     "test": "react-scripts test",
@@ -79,6 +80,7 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.0",
     "@rollup/plugin-node-resolve": "^15.0.2",
+    "@rollup/plugin-replace": "^5.0.2",
     "@rollup/plugin-typescript": "^11.1.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
@@ -105,8 +107,11 @@
     "rollup": "^3.23.0",
     "rollup-plugin-cleaner": "^1.0.0",
     "rollup-plugin-dts": "^5.3.0",
+    "rollup-plugin-livereload": "^2.0.5",
     "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-serve": "^2.0.2",
     "rollup-plugin-uglify": "^6.0.4",
+    "rollup-plugin-visualizer": "^5.9.2",
     "styled-components": "^5.3.6",
     "tsc-watch": "^6.0.4",
     "typescript": "5.1.3",

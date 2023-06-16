@@ -7,12 +7,15 @@ import packageJson from './package.json';
 import { uglify } from 'rollup-plugin-uglify';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import cleaner from 'rollup-plugin-cleaner';
+import { visualizer } from "rollup-plugin-visualizer";
 
-const externals = {
-  react: 'React',
-  'react-dom': 'ReactDOM',
-  'react-scripts': 'ReactScripts',
-};
+process.env.NODE_ENV = 'development';
+
+const visualizerOptions = {
+  sourcemap: false,
+  gzipSize: true,
+  brotliSize: true,
+}
 
 export default [
   {
@@ -27,20 +30,25 @@ export default [
         file: packageJson.module,
         format: 'esm',
         sourcemap: false,
+        preserveModules: false,
       },
     ],
     plugins: [
       cleaner({ targets: ['./dist'] }),
       resolve(),
       peerDepsExternal(),
-      commonjs(),
       typescript({
         tsconfig: './tsconfig.json',
         sourceMap: false,
       }),
+      commonjs(),
       uglify(),
-    ],
-    external: Object.keys(externals),
+      visualizer({
+        ...visualizerOptions,
+        filename: 'reports/stats.cjs.html',
+        title: `Gleamy's CommonJS bundle stats`
+      }),
+    ]
   },
   {
     input: 'dist/esm/index.d.ts',
@@ -54,6 +62,11 @@ export default [
       }),
       dts.default(),
       resolve(),
-    ],
+      visualizer({
+        ...visualizerOptions,
+        filename: 'reports/stats.esm.html',
+        title: `Gleamy's ECMAScript modules bundle stats`
+      }),
+    ]
   },
 ];
