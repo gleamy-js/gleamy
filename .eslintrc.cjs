@@ -30,6 +30,7 @@ module.exports = {
   ],
   globals: {
     JSX: 'readonly',
+    'React': 'readonly',
   },
   root: true,
 };

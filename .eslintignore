@@ -5,3 +5,5 @@ coverage
 node_modules
 dist
 to-be-worked-on
+src/Preview.tsx
+src/.previes

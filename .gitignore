@@ -2,8 +2,7 @@
 
 # dependencies
 /node_modules
-/.pnp
-.pnp.js
+
 
 # testing
 /coverage
@@ -26,8 +25,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# development
+.dev
 /to-be-worked-on
-
-# yalc
-.yalc
-.yalc.lock

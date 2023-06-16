@@ -5,12 +5,28 @@
     "target": "ES6",
     "module": "ES6",
     "composite": false,
-    "plugins": [{ "name": "typescript-tslint-plugin" }],
-    "lib": ["dom", "dom.iterable", "ES2015"],
+    "plugins": [
+      {
+        "name": "typescript-tslint-plugin"
+      }
+    ],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "ES2015"
+    ],
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "noFallthroughCasesInSwitch": true,
-    "types": ["node", "jest", "@testing-library/jest-dom"],
+    "types": [
+      "node",
+      "jest",
+      "@testing-library/jest-dom"
+    ],
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/types"
+    ],
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "preserveSymlinks": true,
@@ -40,7 +56,9 @@
     "rootDir": "./src",
     "outDir": "/dist"
   },
-  "include": ["src"],
+  "include": [
+    "src"
+  ],
   "exclude": [
     "coverage/**",
     "coverage-ts/**",
@@ -50,6 +68,9 @@
     "typings/browser.d.ts",
     "typings/browser/**",
     "to-be-worked-on/**",
-    "dist"
+    "dist",
+    "dev",
+    "src/.preview/**", // excludes development preview files
+    "src/Preview.tsx" // excludes development preview files
   ]
 }
