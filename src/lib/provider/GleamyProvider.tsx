@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { GleamyContext } from '.';
+import { GleamyContext } from './GleamyContext';
 import { TProvider } from '../../types/provider';
 import { TProviderValues } from '../../types/provider/TProvider';
 
