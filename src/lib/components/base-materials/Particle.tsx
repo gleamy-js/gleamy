@@ -1,5 +1,5 @@
 import { forwardRef } from 'react';
-import { ParticleMaterial } from '.';
+import { ParticleMaterial } from './ParticleMaterial';
 import styled from 'styled-components';
 import { TParticle } from '../../../types';
 

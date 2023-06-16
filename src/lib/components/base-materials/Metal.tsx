@@ -1,5 +1,5 @@
 import { forwardRef } from 'react';
-import { GradientMaterial } from '.';
+import { GradientMaterial } from './GradientMaterial';
 import styled from 'styled-components';
 import { TStaticGradient } from '../../../types';
 
