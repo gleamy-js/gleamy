@@ -2,9 +2,9 @@
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
+import terser from '@rollup/plugin-terser';
 import dts from 'rollup-plugin-dts';
 import packageJson from './package.json';
-import { uglify } from 'rollup-plugin-uglify';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import cleaner from 'rollup-plugin-cleaner';
 import { visualizer } from "rollup-plugin-visualizer";
@@ -42,7 +42,7 @@ export default [
         sourceMap: false,
       }),
       commonjs(),
-      uglify(),
+      terser(),
       visualizer({
         ...visualizerOptions,
         filename: 'reports/stats.cjs.html',
