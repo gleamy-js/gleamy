@@ -1,9 +1,0 @@
-# These are supported funding model platforms
-
-github: [gleamy-js]
-open_collective: gleamy
-ko_fi: gleamy
-custom:
-  [
-    'https://www.paypal.com/donate/?business=MR2D54SP47FHA&no_recurring=0&item_name=Help+me+support+Gleamy+NPM+package+for+further+development+and+support%21%0A%0AThank+you%21&currency_code=EUR',
-  ]
