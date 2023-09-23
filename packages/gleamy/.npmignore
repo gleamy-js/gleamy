@@ -1,0 +1,5 @@
+tests
+test
+examples
+__tests__/**
+.gitignore

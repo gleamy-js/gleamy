@@ -1,0 +1,19 @@
+name: NPM Audit
+on:
+  schedule:
+    # At the end of every day
+    - cron: '0 0 * * *'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        env:
+          NODE_ENV: production
+        with:
+          node-version: '16.x'
+          cache: npm
+      - run: npm install
+      - run: npm run audit

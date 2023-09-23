@@ -1,0 +1,8 @@
+# Ignore artifacts:
+build
+dist
+coverage
+coverage-ts
+node_modules
+dist
+.husky
