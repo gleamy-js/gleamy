@@ -1,0 +1,26 @@
+{
+  "collectCoverage": true,
+  "collectCoverageFrom": [
+    "**/*.{ts, js, jsx}",
+    "!**/node_modules/**",
+    "!**/vendor/**",
+    "!**/coverage/**",
+    "!**/reports/**",
+    "!**/dist/**",
+    "!**/.next/**"
+  ],
+  "coverageReporters": [
+    "clover",
+    "json",
+    "html",
+    ["text", { "skipFull": true }]
+  ],
+  "coverageDirectory": "./reports/jest",
+  "extensionsToTreatAsEsm": [".ts", ".tsx", ".jsx"],
+
+  "transform": {
+    "^.+\\.tsx?$": "ts-jest"
+  },
+  "rootDir": "./",
+  "roots": ["<rootDir>/packages/", "<rootDir>/dev-environment/"]
+}

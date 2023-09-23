@@ -1,0 +1,98 @@
+@font-face {
+  font-family: 'Arapey';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../fonts/Arapey-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Arapey';
+  font-style: italic;
+  font-weight: normal;
+  src: url('../fonts/Arapey-Italic.ttf') format('truetype');
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 50px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.performance-panel {
+  background: black;
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 30%;
+  white-space: nowrap;
+  line-height: 2;
+}
+
+.content {
+  width: 70%;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.background {
+  background-image: linear-gradient(45deg, #b0b0b0 25%, transparent 25%),
+    linear-gradient(-45deg, #b0b0b0 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #b0b0b0 75%),
+    linear-gradient(-45deg, transparent 75%, #b0b0b0 75%);
+  background-size: 20px 20px;
+  background-position:
+    0 0,
+    0 10px,
+    10px -10px,
+    -10px 0px;
+}
+
+.options-label {
+  display: flex;
+  gap: 10px;
+  align-items: normal;
+}
+
+.wrapper {
+  gap: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Arapey', 'Times New Roman', Times, serif;
+  font-weight: bold;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+input {
+  padding: 3px;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}

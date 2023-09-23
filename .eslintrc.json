@@ -1,0 +1,64 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "plugin:security/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "workspaces",
+    "@typescript-eslint",
+    "eslint-plugin-prettier",
+    "react",
+    "jsx-a11y"
+  ],
+  "ignorePatterns": [
+    "node_modules/",
+    "build/",
+    "dist/",
+    "reports/",
+    ".next/",
+    "rollup.config.js",
+    "next.config.js",
+    "*.d.ts"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "no-console": 1, // Means warning
+    "prettier/prettier": 2, // Means error
+    "prefer-const": "error",
+    "indent": [1, 2],
+    "no-else-return": 1,
+    "workspaces/no-relative-imports": "error",
+    "workspaces/require-dependency": "warn",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-uses-react": "off",
+    "import/prefer-default-export": "off",
+    "no-restricted-imports": ["error"],
+    "import/extensions": [
+      "off",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ]
+  }
+}
