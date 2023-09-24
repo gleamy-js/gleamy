@@ -15,7 +15,7 @@
     ["text", { "skipFull": true }]
   ],
   "verbose": true,
-  "coverageDirectory": "./reports/jest",
+  "coverageDirectory": "<rootDir>/reports/jest",
   "extensionsToTreatAsEsm": [".ts", ".tsx", ".jsx"],
   "transform": {
     "^.+\\.tsx?$": ["ts-jest", {
