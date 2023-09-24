@@ -11,9 +11,9 @@
     "gleamy:build": "npm run build:gleamy --workspace=gleamy",
     "gleamy:publish": "npm run publish:gleamy --workspace=gleamy",
     "prettier": "prettier --config .prettierrc.json './**/*.{ts,tsx,js,json}' --write",
-    "test": "jest",
+    "test": "jest --runInBand",
     "test:watch": "npm run test --watch",
-    "test:coverage": "typescript-coverage-report --outputDir reports/ts-coverage && npm run test --coverage --runInBand",
+    "test:coverage": "npm run test --coverage --runInBand && typescript-coverage-report --outputDir reports/ts-coverage",
     "lint": "npx eslint -c .eslintrc.json  --fix . --ext .ts,.tsx,.js",
     "audit": "npm audit -–audit-level=info"
   },
