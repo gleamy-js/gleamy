@@ -31,8 +31,7 @@
     "FUNDING.md",
     "CONTRIBUTING.md",
     "CODE_OF_CONDUCT.md",
-    "readme-assets",
-    "reports"
+    "readme-assets"
   ],
   "engines": {
     "node": ">16.4.0"

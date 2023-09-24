@@ -1,4 +1,4 @@
-name: NPM Audit
+name: 🕵🏽 NPM Audit
 on:
   schedule:
     # At the end of every day
