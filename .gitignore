@@ -33,6 +33,3 @@ next-env.d.ts
 # IDE
 .idea
 .vscode
-
-# reports are uploaded within the pipeline
-reports
