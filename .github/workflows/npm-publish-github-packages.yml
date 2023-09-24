@@ -38,7 +38,7 @@ jobs:
       - run: npm run gleamy:build
       - run: echo "publishing version ${{ env.RELEASE_VERSION }}"
       - run: npm version ${{ env.RELEASE_VERSION }}
-      - run: npm gleamy:publish
+      - run: npm run gleamy:publish
         env:
           NODE_ENV: production
           NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
