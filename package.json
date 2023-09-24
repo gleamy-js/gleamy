@@ -13,7 +13,7 @@
     "prettier": "prettier --config .prettierrc.json './**/*.{ts,tsx,js,json}' --write",
     "test": "jest --runInBand",
     "test:watch": "npm run test --watch",
-    "test:coverage": "npm run test --coverage --runInBand && typescript-coverage-report --outputDir reports/ts-coverage",
+    "test:coverage": "typescript-coverage-report --outputDir reports/ts-coverage && jest --coverage --runInBand",
     "lint": "npx eslint -c .eslintrc.json  --fix . --ext .ts,.tsx,.js",
     "audit": "npm audit -–audit-level=info"
   },

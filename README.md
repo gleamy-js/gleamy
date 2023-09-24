@@ -4,7 +4,7 @@
 
 ![](readme-assets/gleamy-logo.svg)
 
-Welcome to Gleamy, the magical React component library that's sure to make your projects sparkle! With Gleamy, you'll be able to bring a pinata to a funeral, a disco ball to a library, and even a unicorn to a board meeting! It's like adding a touch of fairy dust to even the most dull-as-dishwater projects. With its stunning colors and dynamic animations, Gleamy is sure to turn heads and leave your users mesmerized. So why settle for boring and bland when you can add a little sparkle to your life with Gleamy?
+Welcome to Gleamy, the magical React component library that's sure to make your projects sparkle! With Gleamy, you'll be able to bring a piñata to a funeral, a disco ball to a library, and even a unicorn to a board meeting! It's like adding a touch of fairy dust to even the most dull-as-dishwater projects. With its stunning colors and dynamic animations, Gleamy is sure to turn heads and leave your users mesmerized. So why settle for boring and bland when you can add a little sparkle to your life with Gleamy?
 
 ## Documentation
 

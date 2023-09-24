@@ -20,8 +20,31 @@ jobs:
       - run: npm run lint
       - run: npm run test
 
-  upload-reports:
+  build:
     needs: [test]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        env:
+          NODE_ENV: production
+          NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
+        with:
+          always-auth: true
+          node-version: '16.x'
+          registry-url: 'https://registry.npmjs.org/'
+          cache: npm
+      - run: npm install
+      - run: npm run gleamy:build
+      - run: echo "publishing version ${{ env.RELEASE_VERSION }}"
+      - run: npm version ${{ env.RELEASE_VERSION }}
+      - run: npm gleamy:publish
+        env:
+          NODE_ENV: production
+          NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
+  
+  upload-reports:
+    needs: [build]
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
@@ -38,27 +61,4 @@ jobs:
         with:
           name: reports
           path: reports/
-
-  build:
-    needs: [test]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        env:
-          NODE_ENV: production
-          NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
-        with:
-          always-auth: true
-          node-version: '16.x'
-          registry-url: 'https://registry.npmjs.org/'
-          cache: npm
-      - run: npm install
-      - run: npm run build
-      - run: echo "publishing version ${{ env.RELEASE_VERSION }}"
-      - run: npm version ${{ env.RELEASE_VERSION }}
-      - run: npm publish --access=public --allow-same-version --no-git-tag-version
-        env:
-          NODE_ENV: production
-          NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
   
