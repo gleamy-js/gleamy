@@ -1,7 +1,7 @@
 {
   "name": "gleamy",
   "description": "Create a reactive shiny element in different materials",
-  "version": "1.1.6",
+  "version": "1.1.7-beta.0",
   "license": "MIT",
   "private": false,
   "sideEffects": false,
@@ -13,13 +13,13 @@
     "url": "https://github.com/gleamy-js/gleamy/issues"
   },
   "homepage": "https://www.gleamy.dev/",
-  "main": "dist/cjs/index.js",
-  "type": "module",
+  "main": "dist/cjs/index.cjs",
   "types": "dist/cjs/index.d.ts",
   "publishConfig": {
     "access": "public"
   },
-  "module": "dist/esm/index.js",
+  "type": "module",
+  "module": "dist/esm/index.mjs",
   "files": [
     "dist",
     "README.md",
