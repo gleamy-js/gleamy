@@ -46,6 +46,12 @@ export default [
         banner: license,
         footer,
       },
+      // {
+      //   format: 'umd',
+      //   name: 'gleamy',
+      //   banner: license,
+      //   footer,
+      // },
       {
         file: packageJson.module,
         format: 'esm',
