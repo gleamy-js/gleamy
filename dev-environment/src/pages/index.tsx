@@ -98,7 +98,14 @@ export default function Home() {
             <div className="content">
               <GleamyProvider options={options}>
                 <Gold rendering={isRendering} />
-                <Glitter rendering={isRendering} />
+                <Glitter
+                  depthAlpha={true}
+                  rendering={isRendering}
+                  acceleration={1.2}
+                  glitterSize={2}
+                  glitterCoverage={15}
+                  backgroundColor={'rgba(0,0,0, 0.3)'}
+                />
                 <Silver rendering={isRendering} />
                 <Steel rendering={isRendering} />
                 <BlueSteel rendering={isRendering} />
