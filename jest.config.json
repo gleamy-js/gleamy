@@ -18,10 +18,14 @@
   "coverageDirectory": "<rootDir>/reports/jest",
   "extensionsToTreatAsEsm": [".ts", ".tsx", ".jsx"],
   "transform": {
-    "^.+\\.tsx?$": ["ts-jest", {
-      "diagnostics": {
-        "ignoreCodes": [ "TS151001" ]
-    }}]
+    "^.+\\.tsx?$": [
+      "ts-jest",
+      {
+        "diagnostics": {
+          "ignoreCodes": ["TS151001"]
+        }
+      }
+    ]
   },
   "testEnvironment": "node",
   "rootDir": "./",
