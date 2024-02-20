@@ -40,7 +40,7 @@
     "rootDir": "./src",
     "outDir": "/dist"
   },
-  "include": ["./src"],
+  "include": ["./src/**/*.ts", "./src/**/*.tsx"],
   "exclude": [
     "reports",
     "build",
