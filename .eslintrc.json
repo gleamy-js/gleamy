@@ -5,7 +5,7 @@
     "node": true
   },
   "extends": [
-    "plugin:security/recommended",
+    "plugin:security/recommended-legacy",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "prettier",
@@ -39,8 +39,8 @@
     }
   },
   "rules": {
-    "no-console": 1, // Means warning
-    "prettier/prettier": 2, // Means error
+    "no-console": 1,
+    "prettier/prettier": 2,
     "prefer-const": "error",
     "indent": [1, 2],
     "no-else-return": 1,
