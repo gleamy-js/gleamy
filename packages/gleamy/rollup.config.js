@@ -4,7 +4,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
 import terser from '@rollup/plugin-terser';
 import dts from 'rollup-plugin-dts';
-import packageJson from './package.json';
+import packageJson from './package.json' assert {type: 'json'};
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import cleaner from 'rollup-plugin-cleaner';
 import { visualizer } from 'rollup-plugin-visualizer';
@@ -46,12 +46,6 @@ export default [
         banner: license,
         footer,
       },
-      // {
-      //   format: 'umd',
-      //   name: 'gleamy',
-      //   banner: license,
-      //   footer,
-      // },
       {
         file: packageJson.module,
         format: 'esm',
@@ -63,13 +57,13 @@ export default [
     ],
     plugins: [
       cleaner({ targets: ['./dist'] }),
-      resolve(),
       peerDepsExternal(),
       typescript({
         tsconfig: './tsconfig.json',
         sourceMap: false,
         exclude: ['**/__tests__', '**/*.test.ts'],
       }),
+      resolve(),
       commonjs(),
       terser(),
       visualizer({
