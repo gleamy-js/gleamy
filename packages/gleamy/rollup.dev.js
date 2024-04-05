@@ -7,12 +7,12 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 
 export default [
   {
-    input: 'src/index.ts',
+    input: './src/index.ts',
     output: [
       {
         file: packageJson.main,
         format: 'cjs',
-        sourcemap: false,
+        sourcemap: true,
         watch: true,
       },
     ],
@@ -20,7 +20,10 @@ export default [
       peerDepsExternal(),
       typescript({
         tsconfig: './tsconfig.json',
-        sourceMap: false,
+        declaration: true,
+        rootDir: './src',
+        skipLibCheck: true,
+        sourceMap: true,
         exclude: ['**/__tests__', '**/*.test.ts'],
       }),
       resolve(),

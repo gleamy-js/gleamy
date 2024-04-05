@@ -5,10 +5,10 @@
     "preinstall": "npx only-allow pnpm",
     "dev": "turbo run dev",
     "build": "turbo run build",
-    "publish": "turbo run publish",
+    "publish:package": "turbo run publish:package",
     "prettier": "prettier --config .prettierrc.json './**/*.{ts,tsx,js,json}' --write",
-    "test": "jest --runInBand",
-    "test:watch": "npm run test --watch",
+    "test": "turbo run test",
+    "test:watch": "pnpm test --watch",
     "test:coverage": "typescript-coverage-report --outputDir reports/ts-coverage && jest --coverage --runInBand",
     "lint": "turbo run lint",
     "audit": "npm audit -–audit-level=info"
