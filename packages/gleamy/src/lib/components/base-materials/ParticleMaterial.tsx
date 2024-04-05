@@ -195,17 +195,20 @@ export const ParticleMaterial: FC<TParticle> = ({
       createClipPath(context);
     }
 
-    particles.current.forEach((layer, index) => {
+    const particleArray = particles.current;
+
+    for (let i = 0; i < particleArray.length; i++) {
+      const index = i;
+      const layer = particleArray[i];
+
       const selectedParticleColor = Array.isArray(particleColor)
         ? particleColor[index % particleColor.length]
         : particleColor;
 
-      const rotationDegrees = Math.floor(
-        (360 / particles.current.length) * index,
-      );
+      const rotationDegrees = Math.floor((360 / particleArray.length) * index);
       const depthPercentage = (1 / depth) * (index + 1);
 
-      context.fillStyle = material({
+      material({
         context,
         pos1X: (index % 2 === 0 ? toX + 50 : fromX + 50) + rotationDegrees,
         pos1Y: (index % 2 === 0 ? toY + 50 : fromY + 50) + rotationDegrees,
@@ -227,13 +230,15 @@ export const ParticleMaterial: FC<TParticle> = ({
       const arc = context.arc.bind(context);
       const fill = context.fill.bind(context);
 
-      layer.forEach((particle: ParticleLayer) => {
+      for (let j = 0; j < layer.length; j++) {
+        const particle = layer[j] as ParticleLayer;
         beginPath();
         arc(...particle);
         fill();
-      });
+      }
+
       context.restore();
-    });
+    }
   }, [
     intensity,
     acceleration,
