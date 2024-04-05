@@ -41,6 +41,7 @@
   "testEnvironment": "node",
   "rootDir": "./",
   "roots": [
-    "<rootDir>/packages/"
+    "<rootDir>/packages",
+    "<rootDir>/apps"
   ]
 }

@@ -64,6 +64,7 @@ export default [
         sourceMap: false,
         exclude: ['**/__tests__', '**/*.test.ts'],
       }),
+      resolve(),
       commonjs(),
       terser(),
       visualizer({
