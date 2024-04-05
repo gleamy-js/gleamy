@@ -8,32 +8,43 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20.12.1]
     steps:
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v3
+        with:
+          version: 8
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
         env:
           NODE_ENV: production
-        with:
-          node-version: "20.x"
-          cache: npm
-      - run: pnpm install
-      - run: pnpm lint
-      - run: pnpm test
+          NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
+      - run: pnpm install -r
+      - run: pnpm run lint
+      - run: pnpm run test
 
   build:
     needs: [test]
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20.12.1]
     steps:
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v3
+        with:
+          version: 8
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
         env:
           NODE_ENV: production
           NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
-        with:
-          always-auth: true
-          node-version: "20.x"
-          registry-url: "https://registry.npmjs.org/"
-          cache: pnpm
       - run: pnpm install
       - run: echo "publishing version ${{ env.RELEASE_VERSION }}"
       - run: pnpm version ${{ env.RELEASE_VERSION }}
@@ -41,23 +52,3 @@ jobs:
         env:
           NODE_ENV: production
           NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
-
-  # Don't upload reports within the pipeline. Choosing to do it manually for now.
-  # upload-reports:
-  #   needs: [build]
-  #   runs-on: macos-latest
-  #   steps:
-  #     - uses: actions/checkout@v3
-  #     - uses: actions/setup-node@v3
-  #       env:
-  #         NODE_ENV: production
-  #       with:
-  #         node-version: '18.x'
-  #         cache: npm
-  #     - run: npm install
-  #     - run: npm run test:coverage
-  #     - name: 🧚🏼‍♀️ Archive code coverage results
-  #       uses: actions/upload-artifact@v3
-  #       with:
-  #         name: reports
-  #         path: reports/

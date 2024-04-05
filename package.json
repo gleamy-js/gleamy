@@ -10,10 +10,15 @@
     "test": "turbo run test",
     "test:watch": "pnpm test --watch",
     "test:coverage": "typescript-coverage-report --outputDir reports/ts-coverage && jest --coverage --runInBand",
-    "lint": "turbo run lint",
-    "audit": "npm audit -–audit-level=info"
+    "lint": "turbo run lint"
   },
-  "devDependencies": {
+  "engines": {
+    "node": ">=20.12.0",
+    "pnpm": ">=8.15.6"
+  },
+  "packageManager": "pnpm@8.15.5",
+  "dependencies": {
+    "@manypkg/cli": "0.21.3",
     "@testing-library/react": "^14.2.2",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.12.1",
@@ -23,11 +28,7 @@
     "prettier": "^3.2.5",
     "ts-jest": "^29.1.2",
     "typescript": "^5.4.3",
-    "typescript-coverage-report": "^1.0.0"
-  },
-  "engines": {
-    "node": ">=20.12.1",
-    "npm": ">=8.15.5"
-  },
-  "packageManager": "pnpm@8.15.5"
+    "typescript-coverage-report": "^1.0.0",
+    "turbo": "1.13.2"
+  }
 }
