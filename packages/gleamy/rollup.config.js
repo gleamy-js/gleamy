@@ -4,7 +4,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
 import terser from '@rollup/plugin-terser';
 import dts from 'rollup-plugin-dts';
-import packageJson from './package.json' assert {type: 'json'};
+import packageJson from './package.json' assert { type: 'json' };
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import cleaner from 'rollup-plugin-cleaner';
 import { visualizer } from 'rollup-plugin-visualizer';
@@ -60,10 +60,10 @@ export default [
       peerDepsExternal(),
       typescript({
         tsconfig: './tsconfig.json',
+        skipLibCheck: true,
         sourceMap: false,
         exclude: ['**/__tests__', '**/*.test.ts'],
       }),
-      resolve(),
       commonjs(),
       terser(),
       visualizer({

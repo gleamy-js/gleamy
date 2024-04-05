@@ -6,11 +6,20 @@
             "persistent": true
         },
         "build": {
+            "outputs": [
+                "./dist/**"
+            ]
+        },
+        "test": {
             "cache": false
         },
-        "publish": {
+        "lint": {
+            "cache": false
+        },
+        "publish:package": {
             "dependsOn": [
-                "^build"
+                "^build",
+                "^publish:package"
             ],
             "cache": false
         }

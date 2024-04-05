@@ -1,7 +1,7 @@
 {
   "name": "gleamy",
   "description": "Create a reactive shiny element in different materials",
-  "version": "2.0.1",
+  "version": "2.0.1-a",
   "license": "MIT",
   "private": false,
   "sideEffects": false,
@@ -45,15 +45,20 @@
     "special-effects"
   ],
   "dependencies": {
-    "color": "4.2.3"
+    "color": "4.2.3",
+    "@types/node": "^20.12.1",
+    "@types/react": "^18.2.73",
+    "@types/color": "^3.0.6",
+    "tslib": "^2.6.2"
   },
   "scripts": {
-    "dev": "rollup -c rollup.dev.js --watch --bundleConfigAsCjs --makeAbsoluteExternalsRelative",
+    "dev": "rollup -c rollup.dev.js --watch --bundleConfigAsCjs",
     "build": "rollup -c rollup.config.js --bundleConfigAsCjs --makeAbsoluteExternalsRelative",
     "lint": "eslint -c .eslintrc.json --fix . --ext .ts,.tsx,.js",
+    "test": "jest",
     "prepack": "node ./scripts/prepare.cjs",
     "postpack": "node ./scripts/postpack.cjs",
-    "publish": "pnpm publish --dry-run --no-git-checks --access=public --allow-same-version --no-git-tag-version"
+    "publish:package": "pnpm publish --dry-run --no-git-checks --access=public"
   },
   "peerDependencies": {
     "react": "18.2.0",
@@ -69,10 +74,7 @@
     "@rollup/plugin-typescript": "^11.1.6",
     "@testing-library/react": "^14.2.2",
     "@testing-library/user-event": "^14.5.2",
-    "@types/color": "^3.0.6",
     "@types/jest": "^29.5.12",
-    "@types/node": "^18.17.0",
-    "@types/react": "^18.2.0",
     "@types/styled-components": "^5.1.34",
     "@typescript-eslint/eslint-plugin": "^7.3.1",
     "@typescript-eslint/parser": "^7.3.1",
@@ -90,7 +92,18 @@
     "styled-components": "^6.1.8",
     "ts-jest": "^29.1.2",
     "typescript": "5.4.3",
-    "typescript-plugin-styled-components": "^3.0.0"
+    "typescript-plugin-styled-components": "^3.0.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-security": "^2.1.1",
+    "eslint-plugin-workspaces": "^0.10.0"
   },
   "typeCoverage": {
     "atLeast": 99,
@@ -117,7 +130,7 @@
     ]
   },
   "engines": {
-    "node": ">=18.18.0",
+    "node": ">=20.12.1",
     "npm": ">=9.8.1"
   }
 }
