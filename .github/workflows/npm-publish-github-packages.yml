@@ -3,42 +3,41 @@ name: 🪩 Create Gleamy NPM package
 on:
   push:
     tags:
-      - '*'
+      - "*"
 
 jobs:
   test:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: pnpm/action-setup@v3
         env:
           NODE_ENV: production
         with:
-          node-version: '18.x'
+          node-version: "20.x"
           cache: npm
-      - run: npm install
-      - run: npm run lint
-      - run: npm run test
+      - run: pnpm install
+      - run: pnpm lint
+      - run: pnpm test
 
   build:
     needs: [test]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: pnpm/action-setup@v3
         env:
           NODE_ENV: production
           NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
         with:
           always-auth: true
-          node-version: '18.x'
-          registry-url: 'https://registry.npmjs.org/'
-          cache: npm
-      - run: npm install
-      - run: npm run gleamy:build
+          node-version: "20.x"
+          registry-url: "https://registry.npmjs.org/"
+          cache: pnpm
+      - run: pnpm install
       - run: echo "publishing version ${{ env.RELEASE_VERSION }}"
-      - run: npm version ${{ env.RELEASE_VERSION }}
-      - run: npm run gleamy:publish
+      - run: pnpm version ${{ env.RELEASE_VERSION }}
+      - run: pnpm publish:package
         env:
           NODE_ENV: production
           NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
