@@ -17,10 +17,10 @@ jobs:
         with:
           version: 8
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-        env:
+          registry-url: 'https://registry.npmjs.org'
           NODE_ENV: production
           NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
       - run: pnpm install -r
@@ -38,21 +38,21 @@ jobs:
       - uses: pnpm/action-setup@v3
         with:
           version: 8
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-        env:
+          registry-url: 'https://registry.npmjs.org'
           NODE_ENV: production
           NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
       - run: pnpm install
       - run: echo "publishing version ${{ env.RELEASE_VERSION }}"
       - run: pnpm version ${{ env.RELEASE_VERSION }}
-      - run: pnpm config set //registry.npmjs.org/:_authToken ${NPM_PUBLISH_TOKEN}
         env:
             NODE_ENV: production
             NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
       - run: pnpm publish:package
         env:
+          node-version: ${{ matrix.node-version }}
+          registry-url: 'https://registry.npmjs.org'
           NODE_ENV: production
           NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
