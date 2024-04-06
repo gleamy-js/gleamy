@@ -58,7 +58,7 @@
     "test": "jest",
     "prepack": "node ./scripts/prepare.cjs",
     "postpack": "node ./scripts/postpack.cjs",
-    "publish:package": "pnpm publish --dry-run --no-git-checks --access=public"
+    "publish:package": "pnpm publish --no-git-checks --access=public"
   },
   "peerDependencies": {
     "react": "18.3.1",
