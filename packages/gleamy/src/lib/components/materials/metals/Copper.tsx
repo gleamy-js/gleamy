@@ -1,5 +1,5 @@
-import { Metal } from '../../base-materials';
-import { copper } from '../../../definitions';
+import { Metal } from '../../base-materials/Metal';
+import { copper } from '../../../definitions/metal/copper';
 import { type TCopper } from '../../../../types';
 
 export function Copper({

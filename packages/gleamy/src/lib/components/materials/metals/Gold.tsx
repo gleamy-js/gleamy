@@ -1,5 +1,5 @@
-import { Metal } from '../../base-materials';
-import { gold } from '../../../definitions';
+import { Metal } from '../../base-materials/Metal';
+import { gold } from '../../../definitions/metal/gold';
 import { type TGold } from '../../../../types';
 
 export function Gold({

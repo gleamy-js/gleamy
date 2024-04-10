@@ -1,5 +1,5 @@
-import { Plastic } from '../../base-materials';
-import { lacquer } from '../../../definitions';
+import { Plastic } from '../../base-materials/Plastic';
+import { lacquer } from '../../../definitions/plastic/lacquer';
 import { type TLacquer } from '../../../../types';
 
 export function Lacquer({

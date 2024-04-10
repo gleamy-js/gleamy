@@ -1,5 +1,5 @@
-import { Metal } from '../../base-materials';
-import { silver } from '../../../definitions';
+import { Metal } from '../../base-materials/Metal';
+import { silver } from '../../../definitions/metal/silver';
 import { type TSilver } from '../../../../types';
 
 export function Silver({

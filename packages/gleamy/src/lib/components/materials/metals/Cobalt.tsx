@@ -1,5 +1,5 @@
-import { Metal } from '../../base-materials';
-import { cobalt } from '../../../definitions';
+import { Metal } from '../../base-materials/Metal';
+import { cobalt } from '../../../definitions/metal/cobalt';
 import { type TCobalt } from '../../../../types';
 
 export function Cobalt({
