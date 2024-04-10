@@ -1,1 +1,0 @@
-export { glitter } from './glitter';

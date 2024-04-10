@@ -3,62 +3,56 @@ name: 🪩 Create Gleamy NPM package
 on:
   push:
     tags:
-      - '*'
+      - "*"
 
 jobs:
   test:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20.12.1]
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        env:
-          NODE_ENV: production
+      - uses: pnpm/action-setup@v3
         with:
-          node-version: '18.x'
-          cache: npm
-      - run: npm install
-      - run: npm run lint
-      - run: npm run test
+          version: 8
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          registry-url: 'https://registry.npmjs.org'
+          NODE_ENV: production
+          NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
+      - run: pnpm install -r
+      - run: pnpm run lint
+      - run: pnpm run test
 
   build:
     needs: [test]
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20.12.1]
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        env:
-          NODE_ENV: production
-          NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
+      - uses: pnpm/action-setup@v3
         with:
-          always-auth: true
-          node-version: '18.x'
-          registry-url: 'https://registry.npmjs.org/'
-          cache: npm
-      - run: npm install
-      - run: npm run gleamy:build
-      - run: echo "publishing version ${{ env.RELEASE_VERSION }}"
-      - run: npm version ${{ env.RELEASE_VERSION }}
-      - run: npm run gleamy:publish
-        env:
+          version: 8
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          registry-url: 'https://registry.npmjs.org'
           NODE_ENV: production
           NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
-
-  # Don't upload reports within the pipeline. Choosing to do it manually for now.
-  # upload-reports:
-  #   needs: [build]
-  #   runs-on: macos-latest
-  #   steps:
-  #     - uses: actions/checkout@v3
-  #     - uses: actions/setup-node@v3
-  #       env:
-  #         NODE_ENV: production
-  #       with:
-  #         node-version: '18.x'
-  #         cache: npm
-  #     - run: npm install
-  #     - run: npm run test:coverage
-  #     - name: 🧚🏼‍♀️ Archive code coverage results
-  #       uses: actions/upload-artifact@v3
-  #       with:
-  #         name: reports
-  #         path: reports/
+      - run: pnpm install
+      - run: echo "publishing version ${{ env.RELEASE_VERSION }}"
+      - run: pnpm version ${{ env.RELEASE_VERSION }}
+        env:
+            NODE_ENV: production
+            NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
+      - run: pnpm publish:package
+        env:
+          node-version: ${{ matrix.node-version }}
+          registry-url: 'https://registry.npmjs.org'
+          NODE_ENV: production
+          NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}

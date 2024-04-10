@@ -23,7 +23,6 @@ export const GradientMaterial: FC<TStaticGradient | TDynamicGradient> = ({
   ...props
 }) => {
   const gleamyProvider = useContext(GleamyContext);
-
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const clipPaths = useRef<string[]>([]);
 

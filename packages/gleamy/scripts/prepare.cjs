@@ -8,6 +8,9 @@ console.log('Gleamy: preparing for publishing.');
 try {
   result.entitiesToPack.forEach((entity) => {
     console.log(entity);
+    if (entity === "dist") {
+      return void(0);
+    }
     fs.cpSync(`../../${entity}`, `../../packages/gleamy/${entity}`, {
       recursive: true,
     });

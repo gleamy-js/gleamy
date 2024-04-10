@@ -6,6 +6,7 @@
     "FUNDING.md",
     "LICENSE.md",
     "README.md",
-    "SECURITY.md"
+    "SECURITY.md",
+    "dist"
   ]
 }

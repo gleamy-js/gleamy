@@ -195,20 +195,23 @@ export const ParticleMaterial: FC<TParticle> = ({
       createClipPath(context);
     }
 
-    particles.current.forEach((layer, index) => {
+    const particleArray = particles.current;
+
+    for (let i = 0; i < particleArray.length; i++) {
+      // eslint-disable-next-line security/detect-object-injection
+      const layer = particleArray[i];
+
       const selectedParticleColor = Array.isArray(particleColor)
-        ? particleColor[index % particleColor.length]
+        ? particleColor[i % particleColor.length]
         : particleColor;
 
-      const rotationDegrees = Math.floor(
-        (360 / particles.current.length) * index,
-      );
-      const depthPercentage = (1 / depth) * (index + 1);
+      const rotationDegrees = Math.floor((360 / particleArray.length) * i);
+      const depthPercentage = (1 / depth) * (i + 1);
 
-      context.fillStyle = material({
+      material({
         context,
-        pos1X: (index % 2 === 0 ? toX + 50 : fromX + 50) + rotationDegrees,
-        pos1Y: (index % 2 === 0 ? toY + 50 : fromY + 50) + rotationDegrees,
+        pos1X: (i % 2 === 0 ? toX + 50 : fromX + 50) + rotationDegrees,
+        pos1Y: (i % 2 === 0 ? toY + 50 : fromY + 50) + rotationDegrees,
         particleColor: selectedParticleColor?.toString() ?? 'white',
         depthPercentage,
         depthAlpha,
@@ -227,13 +230,16 @@ export const ParticleMaterial: FC<TParticle> = ({
       const arc = context.arc.bind(context);
       const fill = context.fill.bind(context);
 
-      layer.forEach((particle: ParticleLayer) => {
+      for (let j = 0; j < layer.length; j++) {
+        // eslint-disable-next-line security/detect-object-injection
+        const particle = layer[j];
         beginPath();
         arc(...particle);
         fill();
-      });
+      }
+
       context.restore();
-    });
+    }
   }, [
     intensity,
     acceleration,
