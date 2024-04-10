@@ -52,6 +52,7 @@
     "tslib": "^2.6.2"
   },
   "scripts": {
+    "clean": "rm -rf .turbo",
     "dev": "rollup -c rollup.dev.js --watch --bundleConfigAsCjs",
     "build": "rollup -c rollup.config.js --bundleConfigAsCjs --makeAbsoluteExternalsRelative",
     "lint": "eslint -c .eslintrc.json --fix . --ext .ts,.tsx,.js",
@@ -85,7 +86,7 @@
     "prettier": "3.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "rollup": "^4.13.0",
+    "rollup": "^4.14.1",
     "rollup-plugin-cleaner": "^1.0.0",
     "rollup-plugin-dts": "^6.1.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
