@@ -20,16 +20,16 @@
   "packageManager": "pnpm@8.15.6",
   "dependencies": {
     "@manypkg/cli": "0.21.3",
-    "@testing-library/react": "^14.2.2",
+    "@testing-library/react": "^14.3.0",
     "@types/jest": "^29.5.12",
-    "@types/node": "^20.12.1",
-    "@typescript-eslint/eslint-plugin": "^7.3.1",
-    "@typescript-eslint/parser": "^7.3.1",
+    "@types/node": "^20.12.7",
+    "@typescript-eslint/eslint-plugin": "^7.6.0",
+    "@typescript-eslint/parser": "^7.6.0",
     "jest": "^29.7.0",
     "prettier": "^3.2.5",
     "ts-jest": "^29.1.2",
     "turbo": "1.13.2",
-    "typescript": "^5.4.3",
+    "typescript": "^5.4.4",
     "typescript-coverage-report": "^1.0.0"
   }
 }
