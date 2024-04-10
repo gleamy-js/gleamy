@@ -1,5 +1,5 @@
-import { Metal } from '../../base-materials';
-import { gunmetal } from '../../../definitions';
+import { Metal } from '../../base-materials/Metal';
+import { gunmetal } from '../../../definitions/metal/gunmetal';
 import { type TGunmetal } from '../../../../types';
 
 export function Gunmetal({

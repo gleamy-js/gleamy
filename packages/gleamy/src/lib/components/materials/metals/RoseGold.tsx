@@ -1,5 +1,5 @@
-import { Metal } from '../../base-materials';
-import { rosegold } from '../../../definitions';
+import { Metal } from '../../base-materials/Metal';
+import { rosegold } from '../../../definitions/metal/rosegold';
 import { type TRoseGold } from '../../../../types';
 
 export function RoseGold({
