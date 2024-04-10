@@ -1,7 +1,7 @@
 {
   "name": "gleamy",
   "description": "Create a reactive shiny element in different materials",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "license": "MIT",
   "private": false,
   "sideEffects": false,
