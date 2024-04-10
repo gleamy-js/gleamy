@@ -1,62 +1,19 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "Default",
+  "extends": "@gleamy-js/typescript-config/lib.json",
   "compilerOptions": {
-    "target": "ES6",
-    "module": "ES6",
-    "composite": false,
-    "plugins": [],
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "es2017"
-    ],
-    "allowJs": true,
-    "allowSyntheticDefaultImports": true,
-    "noFallthroughCasesInSwitch": true,
-    "types": [
-      "node",
-      "jest"
-    ],
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "preserveSymlinks": true,
-    "pretty": true,
-    "skipLibCheck": false,
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "experimentalDecorators": false,
-    "downlevelIteration": false,
-    "jsx": "react-jsx",
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "allowUnreachableCode": false,
-    "allowUnusedLabels": false,
-    "alwaysStrict": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "declaration": true,
     "declarationDir": "./",
-    "declarationMap": true,
-    "sourceMap": true,
     "baseUrl": "./",
     "rootDir": "./src",
     "outDir": "/dist"
   },
-  "include": [
-    "./src/**/*.ts",
-    "./src/**/*.tsx"
-  ],
+  "include": ["./src/**/*.ts", "./src/**/*.tsx"],
   "exclude": [
     "reports",
     "build",
     "public",
     "typings/browser.d.ts",
     "typings/browser/**",
-    "dist"
+    "dist",
+    "node_modules"
   ]
 }
