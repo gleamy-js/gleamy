@@ -2,8 +2,9 @@
   "name": "gleamy",
   "private": true,
   "scripts": {
+    "clean": "turbo run clean",
     "preinstall": "npx only-allow pnpm",
-    "dev": "turbo run dev",
+    "dev": "turbo run dev --parallel",
     "build": "turbo run build",
     "publish:package": "turbo run publish:package",
     "prettier": "prettier --config .prettierrc.json './**/*.{ts,tsx,js,json}' --write",
@@ -16,7 +17,7 @@
     "node": ">=20.15.1",
     "pnpm": ">=9.5.0"
   },
-  "packageManager": "pnpm@8.15.5",
+  "packageManager": "pnpm@9.5.0",
   "dependencies": {
     "@manypkg/cli": "0.21.4",
     "@testing-library/react": "^16.0.0",
