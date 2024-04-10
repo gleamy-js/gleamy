@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { Plastic } from '../../base-materials';
-import { iridescent } from '../../../definitions';
+import { Plastic } from '../../base-materials/Plastic';
+import { iridescent } from '../../../definitions/plastic/iridescent';
 import { type TIridescent } from '../../../../types';
 
 const Component = styled(Plastic)`
