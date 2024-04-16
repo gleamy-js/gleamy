@@ -1,5 +1,5 @@
-import { Particle } from '../../base-materials';
-import { glitter } from '../../../definitions';
+import { Particle } from '../../base-materials/Particle';
+import { glitter } from '../../../definitions/glitter/glitter';
 import { type TGlitter } from '../../../../types';
 
 export function Glitter({

@@ -1,5 +1,5 @@
-import { Metal } from '../../base-materials';
-import { steel } from '../../../definitions';
+import { Metal } from '../../base-materials/Metal';
+import { steel } from '../../../definitions/metal/steel';
 import { type TSteel } from '../../../../types';
 
 export function Steel({

@@ -12,22 +12,36 @@
     "clover",
     "json",
     "html",
-    ["text", { "skipFull": true }]
+    [
+      "text",
+      {
+        "skipFull": true
+      }
+    ]
   ],
   "verbose": true,
   "coverageDirectory": "<rootDir>/reports/jest",
-  "extensionsToTreatAsEsm": [".ts", ".tsx", ".jsx"],
+  "extensionsToTreatAsEsm": [
+    ".ts",
+    ".tsx",
+    ".jsx"
+  ],
   "transform": {
     "^.+\\.tsx?$": [
       "ts-jest",
       {
         "diagnostics": {
-          "ignoreCodes": ["TS151001"]
+          "ignoreCodes": [
+            "TS151001"
+          ]
         }
       }
     ]
   },
   "testEnvironment": "node",
   "rootDir": "./",
-  "roots": ["<rootDir>/packages/", "<rootDir>/dev-environment/"]
+  "roots": [
+    "<rootDir>/packages",
+    "<rootDir>/apps"
+  ]
 }

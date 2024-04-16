@@ -1,6 +1,9 @@
 import styled from 'styled-components';
-import { Metal, Plastic, CompoundContainer } from '../../base-materials';
-import { gunmetal, laser } from '../../../definitions';
+import { Metal } from '../../base-materials/Metal';
+import { Plastic } from '../../base-materials/Plastic';
+import { CompoundContainer } from '../../base-materials/CompoundContainer';
+import { gunmetal } from '../../../definitions/metal/gunmetal';
+import { laser } from '../../../definitions/metal/laser';
 import { type THolographic } from '../../../../types';
 
 const StyledFoil = styled(Plastic)`

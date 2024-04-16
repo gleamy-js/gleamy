@@ -1,5 +1,5 @@
-import { Metal } from '../../base-materials';
-import { blueSteel } from '../../../definitions';
+import { Metal } from '../../base-materials/Metal';
+import { blueSteel } from '../../../definitions/metal/blueSteel';
 import { type TBlueSteel } from '../../../../types';
 
 export function BlueSteel({
