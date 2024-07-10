@@ -1,5 +1,6 @@
 {
-	"name": "@gleamy-js/typescript-config",
+	"name": "gleamy-typescript-config",
+	"version": "1.0.0",
 	"private": true,
 	"license": "MIT",
 	"files": [

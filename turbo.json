@@ -16,6 +16,13 @@
         "lint": {
             "cache": false
         },
+        "dry-run": {
+            "dependsOn": [
+                "^build",
+                "^dry-run"
+            ],
+            "cache": false
+        },
         "publish:package": {
             "dependsOn": [
                 "^build",
