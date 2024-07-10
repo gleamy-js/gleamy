@@ -1,12 +1,11 @@
 {
   "entitiesToPack": [
-    "readme-assets",
+    "dist",
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "FUNDING.md",
     "LICENSE.md",
     "README.md",
-    "SECURITY.md",
-    "dist"
+    "SECURITY.md"
   ]
 }

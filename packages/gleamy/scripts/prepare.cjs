@@ -9,11 +9,15 @@ try {
   result.entitiesToPack.forEach((entity) => {
     console.log(entity);
     if (entity === "dist") {
-      return void(0);
+      return void (0);
     }
     fs.cpSync(`../../${entity}`, `../../packages/gleamy/${entity}`, {
       recursive: true,
     });
+  });
+
+  fs.cpSync(`./dist`, `../../packages/gleamy/dist`, {
+    recursive: true,
   });
 } catch (error) {
   console.error(error);
