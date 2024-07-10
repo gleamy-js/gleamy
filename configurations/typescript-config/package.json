@@ -1,12 +1,11 @@
 {
 	"name": "@gleamy-js/typescript-config",
-	"version": "0.0.0",
 	"private": true,
 	"license": "MIT",
 	"files": [
 		"lib.json"
 	],
 	"dependencies": {
-		"typescript": "^5.4.4"
+		"typescript": "^5.5.3"
 	}
 }
