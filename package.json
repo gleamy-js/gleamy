@@ -6,6 +6,7 @@
     "dev": "turbo run dev",
     "build": "turbo run build",
     "publish:package": "turbo run publish:package",
+    "dry-run": "turbo run dry-run",
     "prettier": "prettier --config .prettierrc.json './**/*.{ts,tsx,js,json}' --write",
     "test": "turbo run test",
     "test:watch": "pnpm test --watch",

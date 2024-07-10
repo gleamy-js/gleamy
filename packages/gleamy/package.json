@@ -58,7 +58,8 @@
     "test": "jest",
     "prepack": "node ./scripts/prepare.cjs",
     "postpack": "node ./scripts/postpack.cjs",
-    "publish:package": "pnpm publish --dry-run --no-git-checks --access=public"
+    "publish:package": "pnpm publish --no-git-checks --access=public",
+    "dry-run": "pnpm publish --dry-run --no-git-checks --access=public"
   },
   "peerDependencies": {
     "react": "18.3.1",
@@ -66,7 +67,7 @@
     "typescript": "5.3.3"
   },
   "devDependencies": {
-    "@gleamy-js/typescript-config": "workspace:*",
+    "gleamy-typescript-config": "workspace:*",
     "@rollup/plugin-commonjs": "^26.0.1",
     "@rollup/plugin-eslint": "^9.0.5",
     "@rollup/plugin-node-resolve": "^15.2.3",
