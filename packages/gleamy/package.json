@@ -1,7 +1,7 @@
 {
   "name": "gleamy",
   "description": "Create a reactive shiny element in different materials",
-  "version": "2.0.7",
+  "version": "2.0.2",
   "license": "MIT",
   "private": false,
   "sideEffects": false,
@@ -54,7 +54,7 @@
   "scripts": {
     "dev": "rollup -c rollup.dev.js --watch --bundleConfigAsCjs",
     "build": "rollup -c rollup.config.js --bundleConfigAsCjs --makeAbsoluteExternalsRelative",
-    "lint": "eslint -c .eslintrc.json --fix . --ext .ts,.tsx,.js",
+    "lintr": "eslint -c .eslintrc.json --fix .",
     "test": "jest",
     "prepack": "node ./scripts/prepare.cjs",
     "postpack": "node ./scripts/postpack.cjs",
