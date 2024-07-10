@@ -1,4 +1,9 @@
 {
+  "files": [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js"
+  ],
   "env": {
     "browser": true,
     "es2021": true,
@@ -42,14 +47,19 @@
     "no-console": 1,
     "prettier/prettier": 2,
     "prefer-const": "error",
-    "indent": [1, 2],
+    "indent": [
+      1,
+      2
+    ],
     "no-else-return": 1,
     "workspaces/no-relative-imports": "error",
     "workspaces/require-dependency": "warn",
     "react/react-in-jsx-scope": "off",
     "react/jsx-uses-react": "off",
     "import/prefer-default-export": "off",
-    "no-restricted-imports": ["error"],
+    "no-restricted-imports": [
+      "error"
+    ],
     "import/extensions": [
       "off",
       "ignorePackages",

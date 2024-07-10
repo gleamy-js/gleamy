@@ -10,17 +10,17 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [20.12.1]
+        node-version: [20.15.1]
     steps:
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v3
         with:
-          version: 8
+          version: 9.5
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          registry-url: 'https://registry.npmjs.org'
+        env:
           NODE_ENV: production
           NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
       - run: pnpm install -r
@@ -32,24 +32,22 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [20.12.1]
+        node-version: [20.15.1]
     steps:
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v3
         with:
-          version: 8
-      - uses: actions/setup-node@v4
+          version: 9.5
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          registry-url: 'https://registry.npmjs.org'
+        env:
           NODE_ENV: production
           NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
       - run: pnpm install
       - run: echo "publishing version ${{ env.RELEASE_VERSION }}"
       - run: pnpm version ${{ env.RELEASE_VERSION }}
-        env:
-            NODE_ENV: production
-            NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
       - run: pnpm publish:package
         env:
           node-version: ${{ matrix.node-version }}
