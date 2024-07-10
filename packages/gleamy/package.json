@@ -1,7 +1,7 @@
 {
   "name": "gleamy",
   "description": "Create a reactive shiny element in different materials",
-  "version": "2.0.2",
+  "version": "2.0.8",
   "license": "MIT",
   "private": false,
   "sideEffects": false,
@@ -58,7 +58,7 @@
     "test": "jest",
     "prepack": "node ./scripts/prepare.cjs",
     "postpack": "node ./scripts/postpack.cjs",
-    "publish:package": "pnpm publish --no-git-checks --access=public",
+    "publish:package": "pnpm publish --force --no-git-checks --access=public",
     "dry-run": "pnpm publish --dry-run --no-git-checks --access=public"
   },
   "peerDependencies": {
