@@ -18,9 +18,9 @@ jobs:
           version: 9.5
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
         env:
+          node-version: ${{ matrix.node-version }}
+          registry-url: 'https://registry.npmjs.org'
           NODE_ENV: production
           NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
       - run: pnpm install -r
@@ -28,3 +28,8 @@ jobs:
       - run: pnpm run test
       - run: pnpm run build
       - run: pnpm run dry-run
+        env:
+          node-version: ${{ matrix.node-version }}
+          registry-url: 'https://registry.npmjs.org'
+          NODE_ENV: production
+          NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
