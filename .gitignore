@@ -29,9 +29,6 @@ pnpm-error.log*
 #turbo
 .turbo
 
-#rollup
-.rollup.cache
-
 # typescript
 *.tsbuildinfo
 next-env.d.ts

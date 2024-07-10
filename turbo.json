@@ -1,25 +1,27 @@
 {
-  "$schema": "https://turbo.build/schema.json",
-  "pipeline": {
-    "clean": {},
-    "dev": {
-      "cache": false,
-      "persistent": true
-    },
-    "build": {
-      "outputs": [".dist/**"],
-      "cache": false
-
-    },
-    "test": {
-      "cache": true
-    },
-    "lint": {
-      "cache": true
-    },
-    "publish:package": {
-      "dependsOn": ["clean", "^build", "^publish:package"],
-      "cache": false
+    "$schema": "https://turbo.build/schema.json",
+    "tasks": {
+        "dev": {
+            "cache": false,
+            "persistent": true
+        },
+        "build": {
+            "outputs": [
+                "./dist/**"
+            ]
+        },
+        "test": {
+            "cache": false
+        },
+        "lint": {
+            "cache": false
+        },
+        "publish:package": {
+            "dependsOn": [
+                "^build",
+                "^publish:package"
+            ],
+            "cache": false
+        }
     }
-  }
 }

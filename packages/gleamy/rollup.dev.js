@@ -22,7 +22,7 @@ export default [
         tsconfig: './tsconfig.json',
         declaration: true,
         rootDir: './src',
-        skipLibCheck: false,
+        skipLibCheck: true,
         sourceMap: true,
         exclude: ['**/__tests__', '**/*.test.ts'],
       }),
