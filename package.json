@@ -10,7 +10,6 @@
     "prettier": "prettier --config .prettierrc.json './**/*.{ts,tsx,js,json}' --write",
     "test": "turbo run test",
     "test:watch": "pnpm test --watch",
-    "test:coverage": "typescript-coverage-report --outputDir reports/ts-coverage && jest --coverage --runInBand",
     "lint": "turbo run lint"
   },
   "engines": {
@@ -23,13 +22,12 @@
     "@testing-library/react": "^16.0.0",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.14.10",
-    "@typescript-eslint/eslint-plugin": "^7.16.0",
-    "@typescript-eslint/parser": "^7.16.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
     "jest": "^29.7.0",
-    "prettier": "^3.3.2",
-    "ts-jest": "^29.2.1",
-    "typescript": "^5.5.3",
-    "typescript-coverage-report": "^1.0.0",
-    "turbo": "2.0.6"
+    "prettier": "^3.3.3",
+    "ts-jest": "^29.2.4",
+    "typescript": "^5.5.4",
+    "turbo": "2.0.11"
   }
 }
