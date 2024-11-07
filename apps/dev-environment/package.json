@@ -2,22 +2,28 @@
   "name": "dev-environment",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbo"
+    "dev": "next dev --turbopack"
   },
   "devDependencies": {
     "@types/node": "^20.14.10",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
-    "eslint": "^9.8.0",
-    "eslint-config-next": "^14.2.5",
+    "@types/react": "18.3.12",
+    "@types/react-dom": "18.3.1",
+    "eslint": "^9.14.0",
+    "eslint-config-next": "15.0.2",
     "gleamy": "workspace:*",
-    "next": "^14.2.5",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "next": "15.0.2",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
     "typescript": "^5.5.4"
   },
   "engines": {
     "node": ">=20.15.1",
     "pnpm": ">=9.5.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "@types/react": "18.3.12",
+      "@types/react-dom": "18.3.1"
+    }
   }
 }

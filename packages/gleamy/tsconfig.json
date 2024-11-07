@@ -39,7 +39,7 @@
     "alwaysStrict": true,
     "noPropertyAccessFromIndexSignature": true,
     "declaration": true,
-    "declarationDir": "./",
+    "declarationDir": "./types",
     "baseUrl": "./",
     "rootDir": "./src",
     "outDir": "/dist"
