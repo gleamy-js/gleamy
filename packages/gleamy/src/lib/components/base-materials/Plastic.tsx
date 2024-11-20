@@ -10,10 +10,35 @@ const Material = styled(GradientMaterial)`
   transform: translateZ(0);
 `;
 
-const Plastic = forwardRef<typeof GradientMaterial, TDynamicGradient>((props, ref) => {
-  const { width, height, acceleration, rendering, noFill, edgeThickness, spread, material, ...rest } = props as TDynamicGradient;
-  return <Material ref={ref}  width={width} height={height} acceleration={acceleration} rendering={rendering} noFill={noFill} edgeThickness={edgeThickness} spread={spread} material={material} {...rest}/>;
-});
+const Plastic = forwardRef<typeof GradientMaterial, TDynamicGradient>(
+  (props, ref) => {
+    const {
+      width,
+      height,
+      acceleration,
+      rendering,
+      noFill,
+      edgeThickness,
+      spread,
+      material,
+      ...rest
+    } = props as TDynamicGradient;
+    return (
+      <Material
+        ref={ref}
+        width={width}
+        height={height}
+        acceleration={acceleration}
+        rendering={rendering}
+        noFill={noFill}
+        edgeThickness={edgeThickness}
+        spread={spread}
+        material={material}
+        {...rest}
+      />
+    );
+  },
+);
 
 Plastic.displayName = 'Plastic';
 

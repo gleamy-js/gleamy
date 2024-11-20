@@ -1,6 +1,6 @@
 {
   "collectCoverageFrom": [
-    "**/*.{ts, js, jsx}",
+    "**/*.{ts, js, jsx, cjs, mjs}",
     "!**/node_modules/**",
     "!**/vendor/**",
     "!**/coverage/**",
@@ -21,27 +21,18 @@
   ],
   "verbose": true,
   "coverageDirectory": "<rootDir>/reports/jest",
-  "extensionsToTreatAsEsm": [
-    ".ts",
-    ".tsx",
-    ".jsx"
-  ],
+  "extensionsToTreatAsEsm": [".ts", ".tsx", ".jsx"],
   "transform": {
     "^.+\\.tsx?$": [
       "ts-jest",
       {
         "diagnostics": {
-          "ignoreCodes": [
-            "TS151001"
-          ]
+          "ignoreCodes": ["TS151001"]
         }
       }
     ]
   },
   "testEnvironment": "node",
   "rootDir": "./",
-  "roots": [
-    "<rootDir>/packages",
-    "<rootDir>/apps"
-  ]
+  "roots": ["<rootDir>/packages", "<rootDir>/apps"]
 }

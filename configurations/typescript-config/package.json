@@ -1,12 +1,12 @@
 {
-	"name": "gleamy-typescript-config",
-	"version": "1.0.0",
-	"private": true,
-	"license": "MIT",
-	"files": [
-		"lib.json"
-	],
-	"dependencies": {
-		"typescript": "^5.5.3"
-	}
+  "name": "gleamy-typescript-config",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "files": [
+    "lib.json"
+  ],
+  "dependencies": {
+    "typescript": "^5.5.3"
+  }
 }

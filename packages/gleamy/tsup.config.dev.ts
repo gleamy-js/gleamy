@@ -1,4 +1,4 @@
-import { defineConfig } from 'tsup'
+import { defineConfig } from 'tsup';
 
 export default defineConfig({
   entry: ['src/index.ts'],
@@ -10,5 +10,6 @@ export default defineConfig({
   dts: true,
   minify: false,
   legacyOutput: false,
-  format: ['esm' , 'cjs'],
-})
+  format: ['esm', 'cjs'],
+  platform: 'browser',
+});

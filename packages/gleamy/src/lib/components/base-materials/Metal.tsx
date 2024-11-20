@@ -9,10 +9,35 @@ const Material = styled(GradientMaterial)`
   transform: translateZ(0);
 `;
 
-const Metal = forwardRef<typeof GradientMaterial, TStaticGradient>((props, ref) => {
-  const { width, height, acceleration, rendering, noFill, edgeThickness, spread, material, ...rest } = props as TStaticGradient;
-  return <Material ref={ref}  width={width} height={height} acceleration={acceleration} rendering={rendering} noFill={noFill} edgeThickness={edgeThickness} spread={spread} material={material} {...rest}/>;
-});
+const Metal = forwardRef<typeof GradientMaterial, TStaticGradient>(
+  (props, ref) => {
+    const {
+      width,
+      height,
+      acceleration,
+      rendering,
+      noFill,
+      edgeThickness,
+      spread,
+      material,
+      ...rest
+    } = props as TStaticGradient;
+    return (
+      <Material
+        ref={ref}
+        width={width}
+        height={height}
+        acceleration={acceleration}
+        rendering={rendering}
+        noFill={noFill}
+        edgeThickness={edgeThickness}
+        spread={spread}
+        material={material}
+        {...rest}
+      />
+    );
+  },
+);
 
 Metal.displayName = 'Metal';
 
