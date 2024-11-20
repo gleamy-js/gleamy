@@ -1,34 +1,30 @@
 {
-    "$schema": "https://turbo.build/schema.json",
-    "tasks": {
-        "dev": {
-            "cache": false,
-            "persistent": true
-        },
-        "build": {
-            "outputs": [
-                "./dist/**"
-            ]
-        },
-        "test": {
-            "cache": false
-        },
-        "lint": {
-            "cache": false
-        },
-        "dry-run": {
-            "dependsOn": [
-                "^build",
-                "^dry-run"
-            ],
-            "cache": false
-        },
-        "publish:package": {
-            "dependsOn": [
-                "^build",
-                "^publish:package"
-            ],
-            "cache": false
-        }
+  "$schema": "https://turbo.build/schema.json",
+  "tasks": {
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "build": {
+      "outputs": ["./dist/**"]
+    },
+    "test": {
+      "cache": false
+    },
+    "lint": {
+      "cache": false
+    },
+    "pack:package": {
+      "cache": false,
+      "dependsOn": ["^build"]
+    },
+    "dry-run": {
+      "dependsOn": ["^build", "^dry-run"],
+      "cache": false
+    },
+    "publish:package": {
+      "dependsOn": ["^build", "^publish:package"],
+      "cache": false
     }
+  }
 }

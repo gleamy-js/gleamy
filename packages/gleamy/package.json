@@ -63,13 +63,12 @@
   },
   "scripts": {
     "dev": "tsup src/index.ts --config tsup.config.dev.ts --tsconfig tsconfig.json",
-    "dev-2": "rollup -c rollup.dev.js --watch --bundleConfigAsCjs",
     "build": "tsup src/index.ts --config tsup.config.prod.ts --tsconfig tsconfig.json",
-    "build-2": "rollup -c rollup.config.js --bundleConfigAsCjs --makeAbsoluteExternalsRelative",
     "lintr": "eslint -c .eslintrc.json --fix .",
     "test": "jest",
     "prepack": "node ./scripts/prepare.cjs",
     "postpack": "node ./scripts/postpack.cjs",
+    "pack:package": "pnpm build && pnpm pack",
     "publish:package": "pnpm publish --no-git-checks --access=public",
     "dry-run": "pnpm publish --dry-run --no-git-checks --access=public"
   },
