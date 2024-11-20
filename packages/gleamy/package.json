@@ -1,7 +1,7 @@
 {
   "name": "gleamy",
   "description": "Create a reactive shiny element in different materials",
-  "version": "2.0.15",
+  "version": "2.0.16",
   "license": "MIT",
   "private": false,
   "sideEffects": false,
@@ -72,13 +72,6 @@
     "gradient",
     "special-effects"
   ],
-  "dependencies": {
-    "color": "4.2.3",
-    "@types/node": "^22.9.0",
-    "@types/react": "^18.3.12",
-    "@types/color": "^4.2.0",
-    "tslib": "^2.8.1"
-  },
   "scripts": {
     "dev": "tsup src/index.ts --config tsup.config.dev.ts --tsconfig tsconfig.json",
     "build": "tsup src/index.ts --config tsup.config.prod.ts --tsconfig tsconfig.json",
@@ -90,12 +83,19 @@
     "publish:package": "pnpm publish --no-git-checks --access=public",
     "dry-run": "pnpm publish --dry-run --no-git-checks --access=public"
   },
+  "dependencies": {
+    "color": "4.2.3"
+  },
   "peerDependencies": {
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "typescript": "5.6.3"
   },
   "devDependencies": {
+    "@types/node": "^22.9.0",
+    "@types/react": "^18.3.12",
+    "@types/color": "^4.2.0",
+    "tslib": "^2.8.1",
     "gleamy-typescript-config": "workspace:*",
     "@testing-library/react": "^16.0.1",
     "@testing-library/user-event": "^14.5.2",
@@ -124,6 +124,7 @@
     "eslint-plugin-workspaces": "^0.10.1",
     "tsup": "^8.3.5"
   },
+  
   "typeCoverage": {
     "atLeast": 99,
     "strict": true,
@@ -153,6 +154,6 @@
     "testEnvironment": "node"
   },
   "engines": {
-    "node": ">=22.11.0"
+    "node": ">=18"
   }
 }
