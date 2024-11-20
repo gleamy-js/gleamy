@@ -13,7 +13,7 @@ import {
   Gunmetal,
   Iridescent,
   Lacquer,
-} from 'gleamy';
+} from '@gleamy/react';
 import { useState } from 'react';
 
 export default function Home() {

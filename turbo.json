@@ -5,8 +5,10 @@
       "cache": false,
       "persistent": true
     },
+    
     "build": {
-      "outputs": ["./dist/**"]
+      "dependsOn": ["^build"],
+      "outputs": [".next/**", "dist/**", "build/**"]
     },
     "test": {
       "cache": false
