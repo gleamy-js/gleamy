@@ -7,10 +7,12 @@ console.info(licenseContent);
 export default defineConfig({
   entry: ['src/index.ts'],
   sourcemap: true,
-  bundle: false,
+  splitting: true,
+  bundle: true,
   clean: true,
   dts: true,
   minify: true,
+  treeshake: 'smallest',
   legacyOutput: false,
   format: ['esm', 'cjs'],
   banner: {
