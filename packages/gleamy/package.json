@@ -1,10 +1,28 @@
 {
   "name": "gleamy",
   "description": "Create a reactive shiny element in different materials",
-  "version": "2.0.12",
+  "version": "2.0.13",
   "license": "MIT",
   "private": false,
   "sideEffects": false,
+  "funding": [
+    {
+      "type": "individual",
+      "url": "https://github.com/sponsors/gleamy-js"
+    },
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/gleamy-js"
+    },
+    {
+      "type": "opencollective",
+      "url": "https://opencollective.com/gleamy"
+    },
+    {
+      "type": "kofi",
+      "url": "https://ko-fi.com/gleamy"
+    }
+  ],
   "author": {
     "name": "Jordy Houtman",
     "url": "http://www.spacecorp.nl/"
