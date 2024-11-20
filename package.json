@@ -19,7 +19,6 @@
   },
   "packageManager": "pnpm@9.5.0",
   "dependencies": {
-    "@manypkg/cli": "0.22.0",
     "@testing-library/react": "^16.0.1",
     "@types/jest": "^29.5.14",
     "@types/node": "^20.14.10",
@@ -30,5 +29,10 @@
     "ts-jest": "^29.2.5",
     "typescript": "^5.6.3",
     "turbo": "2.2.3"
+  },
+  "overrides": {
+    "cross-spawn@7.0.3": "^7.0.6",
+    "micromatch@4.0.7": "^4.0.8",
+    "@eslint/plugin-kit": "0.2.3"
   }
 }
