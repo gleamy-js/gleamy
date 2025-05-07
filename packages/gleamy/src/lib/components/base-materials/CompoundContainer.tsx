@@ -1,6 +1,19 @@
-import styled from 'styled-components';
-
-export const CompoundContainer = styled.div`
-  display: block;
-  position: relative;
-`;
+export function CompoundContainer(
+  props: React.PropsWithChildren<{
+    style?: React.CSSProperties;
+    className?: string;
+  }>,
+) {
+  return (
+    <div
+      {...props}
+      style={{
+        display: 'block',
+        position: 'relative',
+        ...props.style,
+      }}
+    >
+      {props.children}
+    </div>
+  );
+}
